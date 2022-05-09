@@ -19,7 +19,7 @@
     <div class="linea_vertical"></div>
 
     <mat-form-field class="contenedor_buscar" appearance="outline">
-        <input matInput placeholder="" value="">
+        <input [(ngModel)]="localidad" matInput placeholder="Madrid, Valladolid...">
         <button mat-icon-button matSuffix color="primary" (click)="get_localidad()">
             <mat-icon>search</mat-icon>
         </button>
