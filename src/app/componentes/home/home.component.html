@@ -1,0 +1,27 @@
+<mat-toolbar class="nav_bar" color="primary">
+    <span>My App</span>
+    <mat-icon matSuffix>menu</mat-icon>
+</mat-toolbar>
+
+<div class="contenedor_img">
+    <img src="assets/images/NBHD.png" alt="">
+</div>
+
+<div class="contenedor_buscador">
+    <mat-form-field class="contenedor_tipo" appearance="outline">
+        <mat-select [(ngModel)]="inmueble">
+          <mat-option *ngFor="let tipo of tipos" value={{tipo}}>
+            {{tipo}}
+          </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <div class="linea_vertical"></div>
+
+    <mat-form-field class="contenedor_buscar" appearance="outline">
+        <input matInput placeholder="" value="">
+        <button mat-icon-button matSuffix color="primary">
+            <mat-icon>search</mat-icon>
+        </button>
+    </mat-form-field>
+</div>
