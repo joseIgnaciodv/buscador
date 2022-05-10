@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit {
   
   get_localidad(){
     this.api.get_localidad(this.localidad).subscribe(respuesta =>{
+      console.log("funciona");
       console.log(respuesta.localidad);
     });
   }
