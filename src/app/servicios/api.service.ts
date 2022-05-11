@@ -13,7 +13,7 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   get_localidad(localidad: string): Observable<Localidad>{
-    let url = environment.apiUrl + "localidad/" + localidad;
+    let url = environment.apiUrl + "api/localidad/" + localidad;
     return this.http.get<Localidad>(url);
   }
 }
