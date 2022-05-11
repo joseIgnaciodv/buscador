@@ -1,3 +1,8 @@
 export interface Localidad {
-    localidad: string
+    id: number,
+    created_at: Date,
+    updated_at: Date,
+    odio: number,
+    municipio: string,
+    vecesConsultado: number
 }
