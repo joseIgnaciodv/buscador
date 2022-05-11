@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
   
   get_localidad(){
     this.api.get_localidad(this.localidad).subscribe(respuesta =>{
-      let id_localidad = respuesta.id
+      let id_localidad = respuesta.municipio
       let url = "/localidad/" + id_localidad;
       console.log("Url: " + url)
       this.router.navigateByUrl(url)

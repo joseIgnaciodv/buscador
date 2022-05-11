@@ -16,4 +16,5 @@ export class ApiService {
     let url = environment.apiUrl + "api/localidad/" + localidad;
     return this.http.get<Localidad>(url);
   }
+
 }
