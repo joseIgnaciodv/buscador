@@ -16,9 +16,20 @@ export class HomeComponent implements OnInit {
 
   
   navegar_inmuebles(){
+    if(this.inmueble == "Pisos"){
+      let url = "/localidad/" + this.localidad + "/" + 3;
+      this.router.navigateByUrl(url);
+    }else if(this.inmueble == "Oficinas"){
+      let url = "/localidad/" + this.localidad + "/" + this.inmueble;
+      this.router.navigateByUrl(url);
+    }else if(this.inmueble == "Naves"){
+      let url = "/localidad/" + this.localidad + "/" + this.inmueble;
+      this.router.navigateByUrl(url);
+    }else if(this.inmueble == "Garajes"){
       let url = "/localidad/" + this.localidad + "/" + this.inmueble;
       this.router.navigateByUrl(url);
     }
+  }
 
   ngOnInit(): void {
     

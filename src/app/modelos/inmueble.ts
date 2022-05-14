@@ -1,4 +1,10 @@
 export interface Inmueble {
+    'id': number,
+    'created_at': Date,
+    'updated_at': Date,
+    'localizaciones_id':number,
+    'latitud':number,
+    'longitud':number,
     'nombre': string,
     'precio': number,
     'imagenes': Array<string>,
@@ -6,7 +12,7 @@ export interface Inmueble {
     'enlace': string,
     'habitaciones': number,
     'banos': number,
-    'metros2': string,
+    'm2': string,
     'telefono': string,
     'ubicacion': string,
     'caracteristicas': Array<string>
