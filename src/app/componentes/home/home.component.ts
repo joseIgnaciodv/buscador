@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/servicios/api.service';
 
 @Component({
@@ -12,19 +12,16 @@ export class HomeComponent implements OnInit {
   tipos: Array<String> = ["Pisos", "Oficinas", "Naves", "Garajes"]
   inmueble: string = "";
   localidad: string = "";
-  constructor(private api: ApiService, private router: Router) { }
+  constructor(private api: ApiService, private router: Router, private route: ActivatedRoute) { }
 
   
-  get_localidad(){
-    this.api.get_localidad(this.localidad).subscribe(respuesta =>{
-      let id_localidad = respuesta.municipio
-      let url = "/localidad/" + id_localidad;
-      console.log("Url: " + url)
-      this.router.navigateByUrl(url)
-    });
-  }
+  navegar_inmuebles(){
+      let url = "/localidad/" + this.localidad + "/" + this.inmueble;
+      this.router.navigateByUrl(url);
+    }
 
   ngOnInit(): void {
+    
   }
 
 }

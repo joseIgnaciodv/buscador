@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
+import { Inmueble } from 'src/app/modelos/inmueble';
 import { ApiService } from 'src/app/servicios/api.service';
 
 @Component({
@@ -10,18 +11,29 @@ import { ApiService } from 'src/app/servicios/api.service';
 })
 export class LocalidadComponent implements OnInit {
   num_odio: number = 0;
+  localidad: string = "";
+  tipo: string = "";
+
+  lista_inmuebles: Array<Inmueble> = []
 
   constructor(private route: ActivatedRoute, private api: ApiService, private router: Router) { }
   
   get_odio(){
-    let localidad = this.route.snapshot.params['id'];
-    this.api.get_localidad(localidad).subscribe(respuesta =>{
+    this.api.get_localidad(this.localidad).subscribe(respuesta =>{
       this.num_odio = respuesta.odio;
     });
   }
+
+  get_inmuebles(){
+    this.api.get_inmuebles(this.localidad, this.tipo).subscribe(respuesta =>{
+      this.lista_inmuebles = respuesta;
+    })
+  }
+
   ngOnInit(): void {
-    // let id_localidad = this.route.snapshot.params['id']
-    // this.num_odio = id_localidad;
+    this.localidad = this.route.snapshot.params['localidad'];
+    this.tipo = this.route.snapshot.params['tipo']
+    this.get_inmuebles();
   }
 
 }
