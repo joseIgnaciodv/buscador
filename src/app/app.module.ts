@@ -13,12 +13,14 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './componentes/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LocalidadComponent } from './componentes/localidad/localidad.component';
+import { FooterComponent } from './componentes/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    LocalidadComponent
+    LocalidadComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
