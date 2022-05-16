@@ -31,6 +31,10 @@ export class LocalidadComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    setTimeout(() => {
+      this.api.get_localidad(this.localidad).subscribe(respuesta =>{
+        this.num_odio = respuesta.odio;
+      });}, 200);
     this.localidad = this.route.snapshot.params['localidad'];
     this.tipo = this.route.snapshot.params['tipo']
     this.get_inmuebles();

@@ -1,3 +1,26 @@
+$blue: #34548B;
+$light-blue: #A1B5D0;
+$red: #F36F61;
+$light-green: #BED442;
+$green: #83CB53;
+
+
+.ppal {
+  padding: 20px;
+  background-color: $blue;
+  border-radius: 0px;
+  margin-bottom: 10px;
+  font-weight: 200;
+  color: white;
+}
+.odio-output {
+  text-align: center;
+  padding-top: 5%;
+  font-weight: 200;
+  font-size: 1.25em;
+  color:black;
+}
+
 .card-custom {
     overflow: hidden;
     min-height: 210px;

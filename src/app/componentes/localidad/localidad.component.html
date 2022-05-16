@@ -1,7 +1,6 @@
-<button mat-icon-button matSuffix color="primary" (click)="get_odio()">
-    <mat-icon>search</mat-icon>
-</button>
-<p>{{num_odio}}</p>
+<h1 class="ppal"> Inmuebles en {{localidad}} </h1>
+
+<p class="odio-output"> <strong> Odio: </strong> {{num_odio}} </p>
 
 
 <div *ngFor="let inmueble of lista_inmuebles" class="container">
