@@ -8,6 +8,7 @@ import results from '../json/csv_prov.json';
 import {debounceTime} from 'rxjs/operators';
 
 
+
 var nombres = []
 nombres = results
 
@@ -26,6 +27,7 @@ export class HomeComponent implements OnInit {
   countries: Array<string> = results;
   control = new FormControl();
   filCountries: Observable<string[]> | undefined;
+
 
   
   navegar_inmuebles(){
@@ -46,6 +48,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.filCountries = this.control.valueChanges.pipe(
+      debounceTime(1000),
       startWith(''),
       map(val => this._filter(val))
     );
