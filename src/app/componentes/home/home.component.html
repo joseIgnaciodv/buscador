@@ -8,7 +8,7 @@
 </div>
 
 <div class="contenedor_buscador">
-    <mat-form-field class="contenedor_tipo" appearance="outline">
+    <mat-form-field class="contenedor_tipo" appearance="fill">
         <mat-select [(ngModel)]="inmueble">
           <mat-option *ngFor="let tipo of tipos" value={{tipo}}>
             {{tipo}}
@@ -18,10 +18,25 @@
 
     <div class="linea_vertical"></div>
 
-    <mat-form-field class="contenedor_buscar" appearance="outline">
-        <input [(ngModel)]="localidad" matInput placeholder="Madrid, Valladolid...">
-        <button mat-icon-button matSuffix color="primary" (click)="navegar_inmuebles()">
-            <mat-icon>search</mat-icon>
-        </button>
-    </mat-form-field>
+    <mat-form-field class="contenedor_buscar" appearance="fill">
+      <input 
+      matInput
+      type="text"
+      spellcheck=""
+      placeholder="Madrid, Valladolid, Toledo, Murcia..."
+      [(ngModel)]="localidad"
+      [formControl]="control"
+      [matAutocomplete]="auto">
+      <mat-autocomplete  #auto="matAutocomplete" class="autocomp">
+        <mat-option *ngFor="let country of filCountries | async" [value]="country">
+          {{country}}
+        </mat-option>
+      </mat-autocomplete>
+      <button mat-icon-button matSuffix color="primary" (click)="navegar_inmuebles()">
+        <mat-icon>search</mat-icon>
+    </button>
+  </mat-form-field>
 </div>
+
+
+

@@ -4,7 +4,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -15,11 +15,22 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LocalidadComponent } from './componentes/localidad/localidad.component';
 import { FooterComponent } from './componentes/footer/footer.component';
 
+import {MatGridListModule} from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
+import { RouterModule, Routes } from '@angular/router';
+import { FiltroPipe } from './pipes/filtro.pipe';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatNativeDateModule} from '@angular/material/core';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     LocalidadComponent,
+    FiltroPipe,
     FooterComponent
   ],
   imports: [
@@ -30,7 +41,14 @@ import { FooterComponent } from './componentes/footer/footer.component';
     MatIconModule,
     MatInputModule,
     MatSelectModule,
+    MatAutocompleteModule,
+    MatFormFieldModule,
+    RouterModule,
+    MatNativeDateModule,
     FormsModule,
+    MatCardModule,
+    MatGridListModule,
+    ReactiveFormsModule,
     MatButtonModule,
     HttpClientModule
   ],
