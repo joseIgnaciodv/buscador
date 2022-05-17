@@ -22,7 +22,6 @@ import { FiltroPipe } from './pipes/filtro.pipe';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatNativeDateModule} from '@angular/material/core';
-import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { SobreNosotrosComponent } from './componentes/sobre-nosotros/sobre-nosotros.component';
 
 @NgModule({
@@ -32,7 +31,6 @@ import { SobreNosotrosComponent } from './componentes/sobre-nosotros/sobre-nosot
     LocalidadComponent,
     FiltroPipe,
     FooterComponent,
-    NavbarComponent,
     SobreNosotrosComponent,
   ],
   imports: [
