@@ -35,13 +35,13 @@ export class HomeComponent implements OnInit {
       let url = "/localidad/" + this.localidad + "/" + 3;
       this.router.navigateByUrl(url);
     }else if(this.inmueble == "Oficinas"){
-      let url = "/localidad/" + this.localidad + "/" + this.inmueble;
+      let url = "/localidad/" + this.localidad + "/" + 8;
       this.router.navigateByUrl(url);
     }else if(this.inmueble == "Naves"){
-      let url = "/localidad/" + this.localidad + "/" + this.inmueble;
+      let url = "/localidad/" + this.localidad + "/" + 7;
       this.router.navigateByUrl(url);
     }else if(this.inmueble == "Garajes"){
-      let url = "/localidad/" + this.localidad + "/" + this.inmueble;
+      let url = "/localidad/" + this.localidad + "/" + 4;
       this.router.navigateByUrl(url);
     }
   }

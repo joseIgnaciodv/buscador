@@ -23,6 +23,7 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatNativeDateModule} from '@angular/material/core';
 import { SobreNosotrosComponent } from './componentes/sobre-nosotros/sobre-nosotros.component';
+import { InmuebleComponent } from './componentes/inmueble/inmueble.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { SobreNosotrosComponent } from './componentes/sobre-nosotros/sobre-nosot
     FiltroPipe,
     FooterComponent,
     SobreNosotrosComponent,
+    InmuebleComponent,
   ],
   imports: [
     BrowserModule,
