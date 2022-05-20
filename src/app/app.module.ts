@@ -24,7 +24,6 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatNativeDateModule} from '@angular/material/core';
 import { SobreNosotrosComponent } from './componentes/sobre-nosotros/sobre-nosotros.component';
 import { InmuebleComponent } from './componentes/inmueble/inmueble.component';
-import { MapaComponent } from './componentes/mapa/mapa.component';
 import { MapComponent } from './componentes/map/map.component';
 
 
@@ -38,7 +37,6 @@ import { MapComponent } from './componentes/map/map.component';
     FooterComponent,
     SobreNosotrosComponent,
     InmuebleComponent,
-    MapaComponent,
     MapComponent,
   ],
   imports: [
