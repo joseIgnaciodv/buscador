@@ -3,7 +3,7 @@
 <p class="odio-output"> <strong> Odio: </strong> {{num_odio}} </p>
 
 
-<div *ngFor="let inmueble of lista_inmuebles" class="container">
+<div *ngFor="let inmueble of lista_inmuebles;" class="container" [routerLink]="['/inmuebles', inmueble.id]">
     <div class="row pt-5 m-auto">
       <div class="col-md-12 col-lg-12 pb-12">
         <!-- Copy the content below until next comment -->
@@ -16,6 +16,7 @@
             <p class="card-title">{{inmueble.precio}}</p>
             <p class="card-text descripcion">{{inmueble.descripcion}}</p>
           </div>
+
           <div class="card-footer" style="background: inherit; border-color: inherit;">
             <a href="#" class="btn btn-primary">{{inmueble.telefono}}</a>
           </div>

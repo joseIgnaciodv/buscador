@@ -23,4 +23,9 @@ export class ApiService {
     return this.http.get<Array<Inmueble>>(url);
   }
 
+  get_inmueble_concreto(id: number): Observable<Inmueble>{
+    let url = environment.apiUrl + "api/inmuebles/" + id;
+    return this.http.get<Inmueble>(url);
+  }
+
 }
