@@ -24,8 +24,12 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatNativeDateModule} from '@angular/material/core';
 import { SobreNosotrosComponent } from './componentes/sobre-nosotros/sobre-nosotros.component';
 import { InmuebleComponent } from './componentes/inmueble/inmueble.component';
+<<<<<<< HEAD
 // import { MapaComponent } from './componentes/mapa/mapa.component';
 // import { MapComponent } from './componentes/map/map.component';
+=======
+import { MapComponent } from './componentes/map/map.component';
+>>>>>>> 143d5be32c571f81a505d507039190f83d06fa9b
 
 
 
@@ -38,8 +42,12 @@ import { InmuebleComponent } from './componentes/inmueble/inmueble.component';
     FooterComponent,
     SobreNosotrosComponent,
     InmuebleComponent,
+<<<<<<< HEAD
     // MapaComponent,
     // MapComponent,
+=======
+    MapComponent,
+>>>>>>> 143d5be32c571f81a505d507039190f83d06fa9b
   ],
   imports: [
     BrowserModule,
