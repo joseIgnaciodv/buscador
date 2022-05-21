@@ -4,10 +4,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { map, startWith } from 'rxjs';
 import { Observable } from 'rxjs/internal/Observable';
 import { ApiService } from 'src/app/servicios/api.service';
-import results from '../json/csv_prov.json';
+import results from '../../../assets/json/csv_prov.json';
 import {debounceTime} from 'rxjs/operators';
-
-
 
 var nombres = []
 nombres = results
