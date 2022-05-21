@@ -14,7 +14,6 @@ import { HomeComponent } from './componentes/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LocalidadComponent } from './componentes/localidad/localidad.component';
 import { FooterComponent } from './componentes/footer/footer.component';
-
 import {MatGridListModule} from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { RouterModule } from '@angular/router';
@@ -24,9 +23,6 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatNativeDateModule} from '@angular/material/core';
 import { SobreNosotrosComponent } from './componentes/sobre-nosotros/sobre-nosotros.component';
 import { InmuebleComponent } from './componentes/inmueble/inmueble.component';
-
-import { MapComponent } from './componentes/map/map.component';
-
 
 
 
@@ -39,7 +35,6 @@ import { MapComponent } from './componentes/map/map.component';
     FooterComponent,
     SobreNosotrosComponent,
     InmuebleComponent,
-    MapComponent,
 
   ],
   imports: [
