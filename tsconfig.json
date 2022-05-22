@@ -20,9 +20,13 @@
     "importHelpers": true,
     "target": "es2017",
     "module": "es2020",
+    "emitDecoratorMetadata": false,
     "lib": [
       "es2020",
       "dom"
+    ],
+    "types": [
+      "node"
     ]
   },
   "angularCompilerOptions": {
@@ -30,6 +34,16 @@
     "strictInputAccessModifiers": true,
     "strictTemplates": true,
     "fullTemplateTypeCheck": true,
-    "strictInjectionParameters": true
+    "emitDecoratorMetadata": false,
+    "strictInjectionParameters": true,
+    "include": [
+      "src/**/*.ts",
+    ],
+    "exclude": [
+      "node_modules",
+      "<node_internals>/**",
+      "bin/**"
+    ]
+    
   }
 }
