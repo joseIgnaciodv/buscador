@@ -3,12 +3,6 @@ import { ActivatedRoute } from '@angular/router';
 import { ApiService } from 'src/app/servicios/api.service';
 import { MapService } from '../../servicios/map.service';
 
-export const lati:number = 0;
-export const longi:number = 0;
-export const nomb:string= '';
-export const tele:string = '';
-export const ubica:string = '';
-
 
 
 @Component({
@@ -23,9 +17,9 @@ export class InmuebleComponent implements OnInit {
   localizaciones_id:number = 0
   latitud:number = 0;
   longitud:number = 0;
-  nombre: string = "Paquito"
+  nombre: string = ""
   precio: number = 0;
-  imagenes: string[] = []
+  imagenes: string[] = [];
   descripcion: string = "";
   enlace: string = "";
   habitaciones: number = 0;
@@ -72,3 +66,9 @@ export class InmuebleComponent implements OnInit {
   }
 
 }
+
+export const lati:number = 0;
+export const longi:number = 0;
+export const nomb:string= '';
+export const tele:string = '';
+export const ubica:string = '';
