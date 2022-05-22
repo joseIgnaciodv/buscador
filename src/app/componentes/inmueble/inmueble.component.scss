@@ -1,9 +1,9 @@
 .carousel {
     height: auto;
     width: auto;
-    
+
   }
-  
+
 img{
     width: 50px;
     height: 300px;
@@ -45,7 +45,6 @@ h1 {
 .item {
 	width: 94%;
 	margin: 2em auto;
-	display: grid;
 	padding: 20px;
 	grid-template-columns: repeat(12, 1fr);
 	grid-template-rows: repeat(12, auto);
@@ -76,6 +75,10 @@ h1 {
 	font-size: 0.7em;
 	text-transform: uppercase;
 	letter-spacing: 2px;
+}
+
+.item .map-container {
+  align-items: center;
 }
 
 .location {
