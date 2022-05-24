@@ -1,161 +1,105 @@
-@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@800&family=Roboto&display=swap');
-
-.carousel {
-    height: auto;
-    width: auto;
-  }
-
-img{
-    width: 50px;
-    height: 500px;
-}
+$blue: #34548B;
+$light-blue: #A1B5D0;
+$red: #F36F61;
+$light-green: #BED442;
+$green: #83CB53;
 
 .map-container {
-    margin: 25%;
-    width: 50%;
-    height: 50%;
-    position:absolute;
-}
-.mapa{
-    display: flex;
-    align-items: center;
-    padding-top: 20%;
-    padding-bottom: 20%;
+	
+	width: 80%;
+	height: 80%;
+	position: absolute;
+	border-radius: 1%;
 }
 
-body {
-	font-family: "Roboto", sans-serif;
-	font-size: 14px;
-	background-color: var(--white)
+.box {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 20%;
+	padding-bottom: 20%;
+  }
+
+i{
+	font-size: 20px;
+	
+}
+
+.fw-bolder{
+	padding-top: 3%;
+	font-size: 40px;
+	color: white;
+	letter-spacing: 2px;
+	font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.cuerpo{
+	background-color: $blue;
+	font-family: 'Plus Jakarta Sans', sans-serif; 
+	
+	
+}
+
+.text-center{
+	font-family: 'Plus Jakarta Sans', sans-serif; 
+	font-size: 25px;
+	letter-spacing: 3px;
+
+}
+
+.card-header{
+	font-size: 16px;
+	font-weight: bold;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background-color: #83CB53;
+	text-align: center;
+	letter-spacing: 1px;
+}
+
+.card-body{
+	font-size: 15px;
+	
+}
+
+
+
+.card-title{
+	
+	font-weight: bold;
+	letter-spacing: 1px;
+	font-family: 'Plus Jakarta Sans', sans-serif; 
+}
+.card {
+	border-color: rgba(0, 0, 0, 0.41);
+	border-width: 1px;
+	
 }
 
 p {
 	line-height: 26px;
 }
 
-.item .logo{
-  margin-bottom: 10px;
-  display: block;
-  width: 200px;
-  height: 200px;
-  margin-left: auto;
-  margin-right: auto;
+.card-text{
+	text-align: justify;
 }
 
-hr.line {
-  margin-left: 10%;
-  margin-right: 10%;
-  border-radius: 10px;
-  margin-bottom: 5%;
-  color: rgb(0, 0, 0);
-}
-
-.item {
-	width: 94%;
-	margin: 2em auto;
-	padding: 20px;
-	grid-template-columns: repeat(12, 1fr);
-	grid-template-rows: repeat(12, auto);
-	gap: 10px;
-	background-color: var(--white);
-	//background-image: url("https://www.transparenttextures.com/patterns/debut-light.png");
-  box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
-  border-radius: 10px;
-}
-
-.item figure {
-	position: relative;
-	object-fit: cover;
-	overflow: hidden;
-	grid-column: 1/13;
-	grid-row: 2/5;
-}
-
-.item figcaption {
-	position: absolute;
-	padding: 5px;
-	z-index: 1;
-	bottom: 0;
-	left: 0;
-	background-color: var(--white);
-	opacity: 0.7;
-	font-size: 0.7em;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-}
-
-.item .title{
-  font-family: 'Red Hat Display', sans-serif;
-  font-size: 2.4em;
+h1 {
+  	font-size: 2.5em;
 	margin-bottom: 1em;
 	grid-column: 1/13;
 	grid-row: 1/2;
+  	font-weight: bold;
+	color: white;
+}
+
+h4 {
+  font-size: 2.5em;
   font-weight: bold;
+  color: white;
 }
 
-.location {
-  font-size: 14px;
+img{
+	height: 350px;
+	width: 650px;
 }
-
-.characteristics{
-  font-size: 14px;
-}
-
-.phone{
-  font-size: 14px;
-}
-
-.price{
-  font-size: 14px;
-}
-
-@media screen and (min-width: 780px) {
-	.item {
-		max-width: 1100px;
-	}
-	.item figure {
-		grid-column: 1/13;
-		grid-row: 2/4;
-		max-height: 500px;
-		align-self: flex-start;
-	}
-
-  .title{
-    grid-column: 1/13;
-		grid-row: 4/5;
-  }
-
-	.description {
-		grid-column: 1/13;
-		grid-row: 5/7;
-	}
-
-	.phone {
-		grid-column: 1/13;
-		grid-row: 9/9;
-	}
-	.characteristics {
-    grid-column: 8/13;
-		grid-row: 9/9;
-	}
-
-  .location{
-    grid-column: 1/13;
-		grid-row: 7/8;
-  }
-
-  .price{
-    grid-column: 3/13;
-		grid-row: 2/8;
-  }
-}
-
-i{
-  font-size: 14px;
-  font-style: normal;
-  font-weight: bold;
-}
-
-
-
-
