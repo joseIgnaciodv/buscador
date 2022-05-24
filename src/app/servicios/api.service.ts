@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Localidad } from '../modelos/localidad';
 import { environment } from 'src/environments/environment';
 import { Inmueble } from '../modelos/inmueble';
+import { Usuario } from '../modelos/usuario';
 
 
 @Injectable({
@@ -26,6 +27,12 @@ export class ApiService {
   get_inmueble_concreto(id: number): Observable<Inmueble>{
     let url = environment.apiUrl + "api/inmuebles/" + id;
     return this.http.get<Inmueble>(url);
+  }
+
+  login(email: string, password: string): Observable<Usuario>{
+    let datos = {'email': email, 'password': password}
+    let url = environment.apiUrl + "api/auth/login";
+    return this.http.post<Usuario>(url, datos)
   }
 
 }
