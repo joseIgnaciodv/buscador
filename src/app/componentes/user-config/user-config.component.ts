@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthServicioService } from 'src/app/servicios/auth-servicio.service';
+
 
 @Component({
   selector: 'app-user-config',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserConfigComponent implements OnInit {
 
-  constructor() { }
+  constructor(private auth: AuthServicioService, private router: Router ) { }
 
   ngOnInit(): void {
+  }
+
+  logout(){
+    this.auth.eliminar_localStorage()
+    this.router.navigateByUrl("/")
   }
 
 }

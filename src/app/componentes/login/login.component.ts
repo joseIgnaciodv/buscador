@@ -27,6 +27,7 @@ export class LoginComponent implements OnInit {
     this.api.login(this.correo, this.pass).subscribe(usuario =>{
       this.auth.guardar_localStorage(usuario.access_token, usuario.expires_in)
     })
+    console.log(this.correo, this.pass)
   }
 
   ngOnInit(): void {
