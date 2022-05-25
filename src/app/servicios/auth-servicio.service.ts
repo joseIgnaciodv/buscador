@@ -22,4 +22,12 @@ export class AuthServicioService {
     let token = localStorage.getItem('token')
     return token;
   }
+
+  isLogged(): boolean{
+   let token = this.get_token()
+    if(token){
+      return true;
+    }
+    return false;
+  }
 }
