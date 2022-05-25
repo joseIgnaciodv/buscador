@@ -24,6 +24,7 @@ import {MatNativeDateModule} from '@angular/material/core';
 import { SobreNosotrosComponent } from './componentes/sobre-nosotros/sobre-nosotros.component';
 import { InmuebleComponent } from './componentes/inmueble/inmueble.component';
 import { LoginComponent } from './componentes/login/login.component';
+import { UserConfigComponent } from './componentes/user-config/user-config.component';
 
 
 
@@ -37,6 +38,7 @@ import { LoginComponent } from './componentes/login/login.component';
     SobreNosotrosComponent,
     InmuebleComponent,
     LoginComponent,
+    UserConfigComponent,
 
   ],
   imports: [
