@@ -30,9 +30,14 @@ export class ApiService {
     return this.http.get<Inmueble>(url);
   }
 
-  get_lugares_interes(latitud: string, longitud: string): Observable<Array<LugarInteres>>{
+  get_lugares_interes(latitud: number, longitud: number): Observable<Array<LugarInteres>>{
     let url = environment.apiUrl + "api/lugar_interes/" + latitud + "/" + longitud;
     return this.http.get<Array<LugarInteres>>(url);
+  }
+
+  get_lugar_interes(id: number): Observable<LugarInteres>{
+    let url = environment.apiUrl + "api/lugar_interes/" + id;
+    return this.http.get<LugarInteres>(url);
   }
 
   login(email: string, password: string): Observable<Usuario>{

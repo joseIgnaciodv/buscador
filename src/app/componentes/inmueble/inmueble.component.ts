@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { LugarInteres } from 'src/app/modelos/lugar_interes';
 import { ApiService } from 'src/app/servicios/api.service';
 import { MapService } from '../../servicios/map.service';
 
@@ -27,16 +28,26 @@ export class InmuebleComponent implements OnInit {
   ubicacion: string = "";
   caracteristicas: string[] = [];
 
-  //Para el mapa
+  //Para representar el inmueble en el mapa
   public static lati:string = '';
   public static longi:string = '';
   public static nomb:string = '';
   public static tele:string = '';
   public static ubica:string = '';
+
+  //Para representar los lugares de interes en el mapa
+  lista_lugares_interes: Array<LugarInteres> = [];
+  
+  //Mirar como guardar en los arrays de abajo lo contenido en el array de arriba (bulce for??)
+  public static nom_marker: string[] = [];
+  public static dir_marker: string[] = [];
+  public static lat_marker: string[] = [];
+  public static lng_marker: string[] = [];
+  
   
 
-
   constructor(private api: ApiService, private route: ActivatedRoute, private map: MapService) { }
+
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id']
@@ -63,6 +74,14 @@ export class InmuebleComponent implements OnInit {
       InmuebleComponent.ubica = this.ubicacion;
 
     })
+
+    this.latitud = this.route.snapshot.params['latitud']
+    this.longitud = this.route.snapshot.params['longitud']
+    this.api.get_lugares_interes(this.latitud,this.longitud).subscribe(respuesta =>{
+      this.lista_lugares_interes = respuesta;
+
+    })
+
 
     this.ngMapExcec();
 

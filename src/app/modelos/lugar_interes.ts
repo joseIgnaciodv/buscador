@@ -8,7 +8,7 @@ export interface LugarInteres {
     'longitud':number,
     'longitudRadius':number,
     'latitudRadius':number,
-    'tipo_establecimiento':string
+    'tipo_establecimiento':string,
     'telefono': string,
     'puntuacion_media': number,
     'media_analisis': string
