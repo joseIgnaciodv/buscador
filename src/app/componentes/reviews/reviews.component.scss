@@ -1,0 +1,98 @@
+$blue: #34548B;
+$light-blue: #A1B5D0;
+$red: #F36F61;
+$light-green: #BED442;
+$green: #83CB53;
+
+.box {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 20%;
+	padding-bottom: 20%;
+  }
+
+i{
+	font-size: 20px;
+	
+}
+
+.fw-bolder{
+	padding-top: 3%;
+	font-size: 40px;
+	color: white;
+	letter-spacing: 2px;
+	font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.cuerpo{
+	background-color: $blue;
+	font-family: 'Plus Jakarta Sans', sans-serif; 
+	
+	
+}
+
+.text-center{
+	font-family: 'Plus Jakarta Sans', sans-serif; 
+	font-size: 25px;
+	letter-spacing: 3px;
+
+}
+
+.card-header{
+	font-size: 16px;
+	font-weight: bold;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background-color: #83CB53;
+	text-align: center;
+	letter-spacing: 1px;
+}
+
+.card-body{
+	font-size: 15px;
+	
+}
+.card-title{
+	
+	font-weight: bold;
+	letter-spacing: 1px;
+	font-family: 'Plus Jakarta Sans', sans-serif; 
+}
+.card {
+	border-color: rgba(0, 0, 0, 0.41);
+	border-width: 1px;
+	
+}
+
+p {
+	line-height: 26px;
+}
+
+.card-text{
+	text-align: justify;
+}
+
+h1 {
+  	font-size: 2.5em;
+	margin-bottom: 1em;
+	grid-column: 1/13;
+	grid-row: 1/2;
+  	font-weight: bold;
+	color: white;
+}
+
+h4 {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: white;
+}
+
+.product-rating{
+    font-size: 50px;
+}
+
+.stars i{
+    font-size: 18px;
+    color: #28a745;
+}

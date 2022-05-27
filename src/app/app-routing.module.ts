@@ -5,6 +5,7 @@ import { InmuebleComponent } from './componentes/inmueble/inmueble.component';
 import { LocalidadComponent } from './componentes/localidad/localidad.component';
 import { SobreNosotrosComponent } from './componentes/sobre-nosotros/sobre-nosotros.component';
 import { LoginComponent } from './componentes/login/login.component';
+import { ReviewsComponent } from './componentes/reviews/reviews.component';
 import {UserConfigComponent} from './componentes/user-config/user-config.component';
 import { AuthGuard } from './componentes/auth.guard';
 
@@ -15,7 +16,8 @@ const routes: Routes = [
   {path: "inmuebles/:id", component: InmuebleComponent},
   {path: "sobre-nosotros", component: SobreNosotrosComponent},
   {path: "login", component: LoginComponent},
-  {path: "userconfig", component: UserConfigComponent,  canActivate: [AuthGuard]}
+  {path: "userconfig", component: UserConfigComponent,  canActivate: [AuthGuard]},
+  {path: "reviews", component: ReviewsComponent},
 ];
 
 @NgModule({
