@@ -25,9 +25,8 @@ export class AuthServicioService {
 
   isLogged(): boolean{
    let token = this.get_token()
-   console.log(token)
+   //console.log(token)
     if(token){
-
       return true;
     }
     return false;
