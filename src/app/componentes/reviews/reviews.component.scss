@@ -31,7 +31,9 @@ i{
 	
 	
 }
-
+.reviews-container{
+    padding: 8%;
+}
 .text-center{
 	font-family: 'Plus Jakarta Sans', sans-serif; 
 	font-size: 25px;
@@ -50,8 +52,10 @@ i{
 }
 
 .card-body{
-	font-size: 15px;
-	
+	padding: 8%px;
+}
+.card-item{
+    margin: 5%;
 }
 .card-title{
 	
@@ -80,12 +84,6 @@ h1 {
 	grid-row: 1/2;
   	font-weight: bold;
 	color: white;
-}
-
-h4 {
-  font-size: 2.5em;
-  font-weight: bold;
-  color: white;
 }
 
 .product-rating{
