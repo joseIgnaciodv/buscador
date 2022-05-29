@@ -27,8 +27,9 @@ export class LoginComponent implements OnInit {
   login(){
     this.api.login(this.correo, this.pass).subscribe(usuario =>{
       this.auth.guardar_localStorage(usuario.access_token, usuario.expires_in)
+      this.router.navigate(['/userconfig']);
     })
-    this.router.navigateByUrl("/userconfig");
+    
   }
 
   ngOnInit(): void {
