@@ -46,4 +46,9 @@ export class ApiService {
     return this.http.post<Usuario>(url, datos)
   }
 
+  get_top_municipios(num: number): Observable<Localidad[]>{
+    let url = environment.apiUrl + "api/get_top_municipios/" + num;
+    return this.http.get<Localidad[]>(url);
+  }
+
 }

@@ -24,6 +24,23 @@
                     <li><i class=""></i> Detalle 6</li>
                 </ul>
             </div>
+
+            <div class="contenedor_municipios">
+                <mat-form-field class="num_municipios" appearance="outline">
+                    <mat-label>Numero municipios</mat-label>
+                    <mat-select [(ngModel)]="num_elementos">
+                      <mat-option (click)="renderizar_grafica()" *ngFor="let opcion of opciones" value={{opcion}}>
+                        {{opcion}}
+                      </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            
+                <div class="chart-container">
+                  <canvas id="my-chart">
+                  </canvas>
+                </div>
+            </div>
+
             <div class="perfil-usuario-close">
               <li (click)="logout()"><i class="icono fas fa-power-off"></i> Cerrar Sesión</li>
             </div>
