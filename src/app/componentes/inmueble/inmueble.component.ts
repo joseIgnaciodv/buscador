@@ -36,14 +36,6 @@ export class InmuebleComponent implements OnInit {
   public static tele:string = '';
   public static ubica:string = '';
 
-  //Para representar los lugares de interes en el mapa
-  lista_lugares_interes: Array<LugarInteres> = [];
-  
-  //Mirar como guardar en los arrays de abajo lo contenido en el array de arriba (bulce for??)
-  public static nom_marker: string[] = [];
-  public static dir_marker: string[] = [];
-  public static lat_marker: string[] = [];
-  public static lng_marker: string[] = [];
   
 
   constructor(private api: ApiService, private route: ActivatedRoute, private map: MapService) { }
@@ -52,7 +44,6 @@ export class InmuebleComponent implements OnInit {
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id']
     this.api.get_inmueble_concreto(this.id).subscribe(respuesta =>{
-      
       this.localizaciones_id = respuesta.localizaciones_id;
       this.latitud = respuesta.latitud;
       this.longitud = respuesta.longitud;
@@ -74,12 +65,7 @@ export class InmuebleComponent implements OnInit {
       InmuebleComponent.ubica = this.ubicacion;
 
     })
-
-    this.api.get_lugares_interes(this.latitud,this.longitud).subscribe(respuesta =>{
-      this.lista_lugares_interes = respuesta;
-
-    })
-
+    
     this.ngMapExcec();
 
   }
