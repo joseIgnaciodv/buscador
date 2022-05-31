@@ -91,24 +91,36 @@
     </div>
   </div>
 
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        <hr>
-        <h4 class="text-center">Lugares de interés cerca de "{{nombre}}"</h4>
-      </div>
-    </div>
+  
+    
+  
+  <!-- <div *ngIf="latitud != 0 && longitud != 0;">
+    <h1>Hola mierda</h1>
+  </div> -->
+
+  <div *ngIf="mostrar == 0; else mostrarMapa;">
+    
   </div>
 
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        <div class="box">
-          <div id="map" class="map-container"> </div>
+  <ng-template #mostrarMapa>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <hr>
+          <h4 class="text-center">Lugares de interés cerca de "{{nombre}}"</h4>
         </div>
       </div>
     </div>
-  </div>
-
+  
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="box">
+            <div id="map" class="map-container"> </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
 
 </div>

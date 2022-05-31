@@ -15,6 +15,7 @@ export class InmuebleComponent implements OnInit {
   // updated_at: Date
   localizaciones_id:number = 0;
   latitud:number = 0;
+  mostrar = this.latitud;
   longitud:number = 0;
   nombre: string = "";
   precio: number = 0;
@@ -27,6 +28,7 @@ export class InmuebleComponent implements OnInit {
   telefono: string = "";
   ubicacion: string = "";
   caracteristicas: string[] = [];
+
 
   //Para representar el inmueble en el mapa
   public static lati:string = '';
@@ -81,7 +83,6 @@ export class InmuebleComponent implements OnInit {
       this.lista_lugares_interes = respuesta;
 
     })
-
 
     this.ngMapExcec();
 
