@@ -6,43 +6,24 @@
                 </div>
             </div>
         </div>
-        <div class="perfil-usuario-body">
-          <!--
-            <div class="perfil-usuario-bio">
-                <h3 class="titulo"></h3>
-                <p class="texto"></p>
-            </div>-->
-            <div class="perfil-usuario-footer">
-                <ul class="lista-datos">
-                    <li><i class=""></i> Detalle 1</li>
-                    <li><i class=""></i> Detalle 2</li>
-                    <li><i class=""></i> Detalle 3</li>
-                </ul>
-                <ul class="lista-datos">
-                    <li><i class=""></i> Detalle 4</li>
-                    <li><i class=""></i> Detalle 5</li>
-                    <li><i class=""></i> Detalle 6</li>
-                </ul>
-            </div>
 
-            <div class="contenedor_municipios">
-                <mat-form-field class="num_municipios" appearance="outline">
-                    <mat-label>Numero municipios</mat-label>
-                    <mat-select [(ngModel)]="num_elementos">
-                      <mat-option (click)="renderizar_grafica()" *ngFor="let opcion of opciones" value={{opcion}}>
-                        {{opcion}}
-                      </mat-option>
-                    </mat-select>
-                </mat-form-field>
-            
-                <div class="chart-container">
-                  <canvas id="my-chart">
-                  </canvas>
-                </div>
+        <div class="contenedor_municipios">
+            <mat-form-field class="num_municipios" appearance="outline">
+                <mat-label>Numero municipios</mat-label>
+                <mat-select [(ngModel)]="num_elementos">
+                    <mat-option (click)="renderizar_grafica()" *ngFor="let opcion of opciones" value={{opcion}}>
+                    {{opcion}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        
+            <div class="chart-container">
+                <canvas id="my-chart">
+                </canvas>
             </div>
+        </div>
 
-            <div class="perfil-usuario-close">
-              <li (click)="logout()"><i class="icono fas fa-power-off"></i> Cerrar Sesión</li>
-            </div>
+        <div class="perfil-usuario-close">
+            <li (click)="logout()"><i class="icono fas fa-power-off"></i> Cerrar Sesión</li>
         </div>
     </section>
