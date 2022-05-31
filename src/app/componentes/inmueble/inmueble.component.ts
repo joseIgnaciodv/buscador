@@ -15,7 +15,6 @@ export class InmuebleComponent implements OnInit {
   // updated_at: Date
   localizaciones_id:number = 0;
   latitud:number = 0;
-  mostrar = this.latitud;
   longitud:number = 0;
   nombre: string = "";
   precio: number = 0;
@@ -45,7 +44,6 @@ export class InmuebleComponent implements OnInit {
   public static dir_marker: string[] = [];
   public static lat_marker: string[] = [];
   public static lng_marker: string[] = [];
-  
   
 
   constructor(private api: ApiService, private route: ActivatedRoute, private map: MapService) { }
