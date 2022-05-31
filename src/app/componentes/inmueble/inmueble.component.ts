@@ -75,8 +75,6 @@ export class InmuebleComponent implements OnInit {
 
     })
 
-    this.latitud = this.route.snapshot.params['latitud']
-    this.longitud = this.route.snapshot.params['longitud']
     this.api.get_lugares_interes(this.latitud,this.longitud).subscribe(respuesta =>{
       this.lista_lugares_interes = respuesta;
 
