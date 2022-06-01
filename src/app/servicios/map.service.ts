@@ -11,11 +11,10 @@ import { ApiService } from 'src/app/servicios/api.service';
 })
 export class MapService {
 
-  //Mirar como guardar en los arrays de abajo lo contenido en el array de arriba (bulce for??)
-  nom_marker: string[] = [];
-  dir_marker: string[] = [];
-  lat_marker: string[] = [];
-  lng_marker: string[] = [];
+  nom_marker: string[] = ['Prueba Pablo','Prueba Ricardo'];
+  dir_marker: string[] = ['Calle Lokura', 'Calle Queso'];
+  lat_marker: string[] = ['40.7898', '40.7564'];
+  lng_marker: string[] = ['-3.78765', '-3.78111'];
 
   lista_lugares_interes: Array<LugarInteres> = [];
 
@@ -23,10 +22,17 @@ export class MapService {
     this.api.get_lugares_interes(Number(InmuebleComponent.lati),Number(InmuebleComponent.longi)).subscribe(respuesta =>{
       this.lista_lugares_interes = respuesta;
       for(let i = 0; i < this.lista_lugares_interes.length; i++){
-        this.nom_marker.push(this.lista_lugares_interes[i].nombre)
-        this.dir_marker.push(this.lista_lugares_interes[i].direccion)
-        this.lat_marker.push(this.lista_lugares_interes[i].latitud.toString())
-        this.lng_marker.push(this.lista_lugares_interes[i].longitud.toString())
+        let nombre = this.lista_lugares_interes[i].nombre;
+        this.nom_marker.push(nombre);
+
+        let direccion = this.lista_lugares_interes[i].direccion; 
+        this.dir_marker.push(direccion);
+
+        let latitud = this.lista_lugares_interes[i].latitud.toString();
+        this.lat_marker.push(latitud);
+
+        let longitud = this.lista_lugares_interes[i].longitud.toString();
+        this.lng_marker.push(longitud);
       }
     })  
   }
