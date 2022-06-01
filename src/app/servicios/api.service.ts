@@ -36,7 +36,7 @@ export class ApiService {
   }
 
   get_lugar_interes(id: number): Observable<LugarInteres>{
-    let url = environment.apiUrl + "api/lugar_interes/" + id;
+    let url = environment.apiUrl + "api/reviews/" + id;
     return this.http.get<LugarInteres>(url);
   }
 

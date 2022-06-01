@@ -11,7 +11,7 @@ export class ReviewsComponent implements OnInit {
 
   id:number = 0;
   // created_at: Date,
-  // updated_at: Date,
+  // updated_at: Date
   nombre:string = '';
   direccion:string = '';
   latitud:number = 0;

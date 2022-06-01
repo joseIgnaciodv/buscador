@@ -56,10 +56,11 @@ export class MapService {
       const coords = new mapboxgl.LngLat(Number(InmuebleComponent.longi), Number(InmuebleComponent.lati));
       new mapboxgl.Marker({color: '#34548B', rotation: 0}).setLngLat(coords)
       .setPopup(new mapboxgl.Popup( {offset: 25} )
-      .setHTML('<h3><b>' + InmuebleComponent.nomb  + '</h3></b> <h4>' + InmuebleComponent.ubica +'</h4><h4>'+ InmuebleComponent.tele + '</h4>'))
+      .setHTML('<h3><b>' + InmuebleComponent.nomb  + '</h3></b> <h4>'+ InmuebleComponent.tele + '</h4>'))
       .addTo(this.map)
     }) 
   }
+
 
   constructor(private api: ApiService) {
     // Asignamos el token desde las variables de entorno
