@@ -8,6 +8,7 @@ import { LoginComponent } from './componentes/login/login.component';
 import { ReviewsComponent } from './componentes/reviews/reviews.component';
 import {UserConfigComponent} from './componentes/user-config/user-config.component';
 import { AuthGuard } from './componentes/auth.guard';
+import { PerfilComponent } from './componentes/perfil/perfil.component';
 
 
 const routes: Routes = [
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path: "login", component: LoginComponent},
   {path: "userconfig", component: UserConfigComponent,  canActivate: [AuthGuard]},
   {path: "reviews", component: ReviewsComponent},
+  {path: "perfil", component: PerfilComponent},
 ];
 
 @NgModule({

@@ -1,0 +1,61 @@
+$blue: #34548B;
+$light-blue: #A1B5D0;
+$red: #F36F61;
+$light-green: #BED442;
+$green: #83CB53;
+
+.registration-form{
+    background-color: $blue;
+	padding: 50px 0;
+}
+
+.registration-form form{
+    background-color: white;
+    max-width: 600px;
+    margin: auto;
+    padding: 50px 70px;
+    border-radius: 30px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);
+}
+
+.registration-form .form-icon{
+    background-color: white;
+    margin-bottom: 40px;
+    border-radius: 50%;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    height: 200px;
+}
+
+.registration-form .item{
+	border-radius: 20px;
+    margin-bottom: 25px;
+    padding: 10px 20px;
+}
+
+.registration-form .login{
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: $green;
+    border: none;
+    color: white;
+    margin-top: 20px;
+}
+
+.form-title {
+    text-align: center;
+}
+
+.registration-form .login:hover{
+    background-color: $light-green;
+}
+
+@media (max-width: 576px) {
+    .registration-form form{
+        padding: 50px 20px;
+    }
+}

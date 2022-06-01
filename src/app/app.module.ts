@@ -26,6 +26,7 @@ import { InmuebleComponent } from './componentes/inmueble/inmueble.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { UserConfigComponent } from './componentes/user-config/user-config.component';
 import { ReviewsComponent } from './componentes/reviews/reviews.component';
+import { PerfilComponent } from './componentes/perfil/perfil.component';
 
 
 
@@ -41,6 +42,7 @@ import { ReviewsComponent } from './componentes/reviews/reviews.component';
     LoginComponent,
     UserConfigComponent,
     ReviewsComponent,
+    PerfilComponent,
 
   ],
   imports: [

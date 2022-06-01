@@ -15,18 +15,10 @@ export class LoginComponent implements OnInit {
   pass: string = "";
 
   constructor(private api: ApiService, private auth: AuthServicioService, private router: Router) { }
-
-  onLogin(form: NgForm) {
-    if (form.invalid) {
-      return;
-    } else {
-      this.login();
-    }
-  }
   
   login(){
     this.api.login(this.correo, this.pass).subscribe(usuario =>{
-      this.auth.guardar_localStorage(usuario.access_token, usuario.expires_in)
+      this.auth.guardar_localStorage(usuario.access_token, usuario.expires_in);
       this.router.navigate(['/userconfig']);
     })
     

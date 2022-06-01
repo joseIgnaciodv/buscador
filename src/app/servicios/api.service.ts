@@ -6,6 +6,8 @@ import { environment } from 'src/environments/environment';
 import { Inmueble } from '../modelos/inmueble';
 import { LugarInteres } from '../modelos/lugar_interes';
 import { Usuario } from '../modelos/usuario';
+import { User } from '../modelos/user';
+import { AuthServicioService } from './auth-servicio.service';
 
 
 @Injectable({
@@ -13,7 +15,7 @@ import { Usuario } from '../modelos/usuario';
 })
 export class ApiService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private auth: AuthServicioService) { }
 
   get_localidad(localidad: string): Observable<Localidad>{
     let url = environment.apiUrl + "api/localidad/" + localidad;
@@ -36,7 +38,7 @@ export class ApiService {
   }
 
   get_lugar_interes(id: number): Observable<LugarInteres>{
-    let url = environment.apiUrl + "api/reviews/" + id;
+    let url = environment.apiUrl + "api/lugar_interes/" + id;
     return this.http.get<LugarInteres>(url);
   }
 
@@ -49,6 +51,18 @@ export class ApiService {
   get_top_municipios(num: number): Observable<Localidad[]>{
     let url = environment.apiUrl + "api/get_top_municipios/" + num;
     return this.http.get<Localidad[]>(url);
+  }
+
+  get_user(token: string | null): Observable<User> {
+    let url = environment.apiUrl + "api/auth/user-profile";
+    return this.http.get<User>(url, { headers: { Authorization: 'Bearer ' + token } });
+  }
+
+  updateUser(correo: string, pass: string, id: number) {
+    let datos = {'email': correo, 'password': pass}
+    let url = environment.apiUrl + "api/usuarios/actualizar/" + id;
+    return this.http.put<number>(url, datos);
+
   }
 
 }
