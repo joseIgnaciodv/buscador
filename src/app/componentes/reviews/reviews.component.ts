@@ -22,6 +22,7 @@ export class ReviewsComponent implements OnInit {
   telefono:string = '';
   puntuacion_media:number = 0;
   media_analisis:string = '';
+  //Falta unir los datos en el HTML
 
   constructor(private api: ApiService, private route: ActivatedRoute) { }
 
