@@ -18,7 +18,7 @@ const routes: Routes = [
   {path: "sobre-nosotros", component: SobreNosotrosComponent},
   {path: "login", component: LoginComponent},
   {path: "userconfig", component: UserConfigComponent,  canActivate: [AuthGuard]},
-  {path: "reviews", component: ReviewsComponent},
+  {path: "reviews/:id", component: ReviewsComponent},
   {path: "perfil", component: PerfilComponent},
 ];
 
