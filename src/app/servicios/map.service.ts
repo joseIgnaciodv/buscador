@@ -22,20 +22,21 @@ export class MapService {
   respuestaApi(){
     this.api.get_lugares_interes(Number(InmuebleComponent.lati),Number(InmuebleComponent.longi)).subscribe(respuesta =>{
       this.lista_lugares_interes = respuesta;
-      for(let i = 0; i < this.lista_lugares_interes.length; i++){
-        let nombre = this.lista_lugares_interes[i].nombre;
-        this.nom_marker.push(nombre);
+    }) 
+     
+    for(let i = 0; i < this.lista_lugares_interes.length; i++){
+      let nombre = this.lista_lugares_interes[i].nombre;
+      this.nom_marker.push(nombre);
 
-        let direccion = this.lista_lugares_interes[i].direccion; 
-        this.dir_marker.push(direccion);
+      let direccion = this.lista_lugares_interes[i].direccion; 
+      this.dir_marker.push(direccion);
 
-        let latitud = this.lista_lugares_interes[i].latitud.toString();
-        this.lat_marker.push(latitud);
+      let latitud = this.lista_lugares_interes[i].latitud.toString();
+      this.lat_marker.push(latitud);
 
-        let longitud = this.lista_lugares_interes[i].longitud.toString();
-        this.lng_marker.push(longitud);
-      }
-    })  
+      let longitud = this.lista_lugares_interes[i].longitud.toString();
+      this.lng_marker.push(longitud);
+    }
   }
 
 
