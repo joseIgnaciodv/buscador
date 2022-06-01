@@ -1,3 +1,20 @@
+.nav-link:hover{
+  background-color: #596d8d;
+  color: black;
+}
+
+.navbar-brand{
+  width: 100px;
+  height: 100px;
+}
+
+.main-header {
+  height: 400px;
+  background-image: url(https://s3-media3.fl.yelpcdn.com/assets/srv0/yelp_large_assets/65e6a224ada4/assets/img/home/hero_photos/cz8iYo13MpBBGlFLlkA8Sw.jpg);
+  background-size: cover;
+  background-position: center center;
+}
+
 .fade-in-image {
     animation: fadeIn 5s;
     -webkit-animation: fadeIn 5s;
@@ -9,41 +26,41 @@
     0% {opacity:0;}
     100% {opacity:1;}
   }
-  
+
   @-moz-keyframes fadeIn {
     0% {opacity:0;}
     100% {opacity:1;}
   }
-  
+
   @-webkit-keyframes fadeIn {
     0% {opacity:0;}
     100% {opacity:1;}
   }
-  
+
   @-o-keyframes fadeIn {
     0% {opacity:0;}
     100% {opacity:1;}
   }
-  
+
   @-ms-keyframes fadeIn {
     0% {opacity:0;}
     100% {opacity:1;}
   }
-  
+
 .contenedor_h1{
     & h1 {
-        
+
         margin: 2%;
         font-size: 5vh;
         text-align: center;
         letter-spacing: 3px;
-        color: #000000;
+        color: white;
         font-weight: bold;
         font-family: 'Plus Jakarta Sans', sans-serif;
     }
 }
 
-  
+
 
 @media only screen and (max-width: 600px){
 
@@ -115,4 +132,4 @@
             height: 100%;
         }
     }
-}
+  }
