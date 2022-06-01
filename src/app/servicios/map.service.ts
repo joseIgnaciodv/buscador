@@ -17,9 +17,6 @@ export class MapService {
   lat_marker: string[] = [];
   lng_marker: string[] = [];
 
-  date1: Date = new Date("2019-01-16"); 
-  date2: Date = new Date("2019-01-16"); 
-
   lista_lugares_interes: Array<LugarInteres> = [];
 
   respuestaApi(){
@@ -54,9 +51,9 @@ export class MapService {
       style: this.style,
       zoom: this.zoom,
       center: [Number(InmuebleComponent.longi), Number(InmuebleComponent.lati)]
-    });
-
+    }  
     
+    );
 
     //Añadir controles de navegación
     this.map.addControl(new mapboxgl.NavigationControl());
@@ -76,15 +73,6 @@ export class MapService {
     .setPopup(new mapboxgl.Popup( {offset: 25} )
     .setHTML('<h3><b>' + InmuebleComponent.nomb  + '</h3></b> <h4>' + InmuebleComponent.ubica +'</h4><h4>'+ InmuebleComponent.tele + '</h4>'))
     .addTo(this.map)
-
-    
-
-  
-
-
-
-        
-  
 
     
     }
