@@ -9,12 +9,13 @@ import { ApiService } from 'src/app/servicios/api.service';
 @Injectable({
   providedIn: 'root'
 })
+
 export class MapService {
 
-  nom_marker: string[] = ['Prueba Pablo','Prueba Ricardo'];
-  dir_marker: string[] = ['Calle Lokura', 'Calle Queso'];
-  lat_marker: string[] = ['40.7898', '40.7564'];
-  lng_marker: string[] = ['-3.78765', '-3.78111'];
+  nom_marker: string[] = [];
+  dir_marker: string[] = [];
+  lat_marker: string[] = [];
+  lng_marker: string[] = [];
 
   lista_lugares_interes: Array<LugarInteres> = [];
 
@@ -79,6 +80,8 @@ export class MapService {
     .setPopup(new mapboxgl.Popup( {offset: 25} )
     .setHTML('<h3><b>' + InmuebleComponent.nomb  + '</h3></b> <h4>' + InmuebleComponent.ubica +'</h4><h4>'+ InmuebleComponent.tele + '</h4>'))
     .addTo(this.map)
-
+  }
     
-    }
+}
+
+  
