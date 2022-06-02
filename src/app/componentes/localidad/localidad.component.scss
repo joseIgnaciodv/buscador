@@ -34,7 +34,9 @@ $green: #83CB53;
   box-shadow: 5px 5px 20px rgba($red, 10%);
   perspective: 40px;
 }
-
+.container-cards{
+  margin-bottom: 5vw;
+}
 .card-custom {
     overflow: hidden;
     min-height: 210px;
@@ -52,14 +54,16 @@ $green: #83CB53;
   -webkit-line-clamp: 4; /* number of lines to show */
   -webkit-box-orient: vertical;
 }
-@media (max-width: 992px)
-{
-  .inmueble-image{
-    height: 330px;
-    width: 330px;
-  }
+
+.tlf-button{
+  background-color: $green;
+  border-color: $light-green;
 }
-@media (max-width: 768px)
+.tlf-button:hover{
+  background-color: $light-green;
+  border-color: $green;
+}
+@media (max-width: 992px)
 {
   .inmueble-image{
     height: 330px;
