@@ -1,7 +1,15 @@
 <h1 class="ppal"> Inmuebles en {{localidad}} </h1>
 
-<p class="odio-output"> <strong> Odio: </strong> {{num_odio}} </p>
-
+<div *ngIf="num_odio>=80;" class="container-odio">
+  <div class="card-odio">
+    <p class="odio-output"> <strong> Odio: </strong> {{num_odio}} </p>
+  </div>
+</div>
+<div *ngIf="num_odio<80;" class="container-odio">
+  <div class="card-no-odio">
+    <p class="odio-output"> <strong> Odio: </strong> {{num_odio}} </p>
+  </div>
+</div>
 
 <div *ngFor="let inmueble of lista_inmuebles;" class="container" [routerLink]="['/inmuebles', inmueble.id]">
     <div class="row pt-5 m-auto">

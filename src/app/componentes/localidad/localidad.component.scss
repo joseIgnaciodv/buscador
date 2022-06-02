@@ -13,12 +13,26 @@ $green: #83CB53;
   font-weight: 200;
   color: white;
 }
-.odio-output {
+.container-odio{
   text-align: center;
-  padding-top: 5%;
-  font-weight: 200;
-  font-size: 1.25em;
-  color:black;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+.card-no-odio{
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background: linear-gradient(to bottom right, $green 40%, $light-green 100%);
+  border-radius: 20px;
+  box-shadow: 5px 5px 20px rgba($light-blue, 10%);
+  perspective: 40px;
+}
+.card-odio{
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background: linear-gradient(to bottom right, $red 40%, rgb(251, 60, 60) 100%);
+  border-radius: 20px;
+  box-shadow: 5px 5px 20px rgba($red, 10%);
+  perspective: 40px;
 }
 
 .card-custom {
