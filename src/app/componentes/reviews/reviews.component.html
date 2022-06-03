@@ -2,7 +2,7 @@
 <div class="cuerpo">
     <div class="container">
       <div class="text-center">
-          <h1 class="fw-bolder">Lugar de interés</h1>
+          <h1 class="fw-bolder">{{nombre}}</h1>
       </div>
     </div>
   
@@ -13,29 +13,41 @@
               <div class="card-header">Información relevante</div>
               <div class="card-body">
                 <div class="card-item">
-                    Dirección {{direccion}}
+                    <b>Dirección:&nbsp;&nbsp;&nbsp;</b>
+                     {{direccion}}
                 </div>
                 <div class="card-item">
-                    Tipo de establecimiento {{tipo_establecimiento}}
+                    <b>Tipo de establecimiento:</b>&nbsp;&nbsp;&nbsp;{{tipo_establecimiento}}
                 </div>
                 <div class="card-item">
-                    <a href="tel:+34telefono">telefono  {{telefono}}</a>
+                    <b>Teléfono:</b>&nbsp;&nbsp;&nbsp; <a href="tel:+34{{telefono}}">{{telefono}}</a>
                 </div>
-                <div class="card-item">
-                    <p>Analisis de sentimiento</p>
-                    <div class="stars">
-                        <i class="fa fa-star"></i>
+                
+                <div class="card text-center {{estilo}}">
+                    <div class="">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-center">
+                            <p><b>Análisis de sentimiento</b></p>
+                            <br>
+                            <div class="stars">
+                                <i class="{{icono}}"></i>
+                                <p>{{sentimiento}}</p>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
-                <div class="card-item">
-                    <p>Puntuación media</p>
-                    <div class="card-body text-center">
-                        <span class="product-rating">{{puntuacion_media}}</span><span>/5</span>
-                        <div class="stars">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
+                <div *ngIf="puntuacion_mediaa != 'Sin puntuacion media'">
+                    <div class="card-item">
+                        <div class="card-center">
+                            <p><b>Puntuación media</b></p>
+                        </div>
+                        <div class="card-body text-center">
+                            <span class="product-rating">{{puntuacion_media}}</span><span>/5</span>
+                            <div class="stars">
+                                <i class="fa fa-star" *ngFor="let i of Arr(puntuacion_parseada).fill(1)"></i> 
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -46,39 +58,42 @@
             <div class="card mb-4">
                 <div class="card-header">Reviews</div>
                 <div class="reviews-container">
-                    <div class="media g-mb-30 media-comment">
+                    <p class="h5 g-color-gray-dark-v1 mb-0 autor">{{no_comments}}</p>       
+                    <div class="media g-mb-30 media-comment" *ngFor="let index of lista_reviews">
                         <div class="media-body u-shadow-v18 g-bg-secondary g-pa-30">
                             <div class="g-mb-15">
-                                <p class="h5 g-color-gray-dark-v1 mb-0 autor">John Doe</p>
+                                <p class="h5 g-color-gray-dark-v1 mb-0 autor">{{index.autor}}</p>
                             </div>
-                            <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue
-                            felis in faucibus ras purus odio, vestibulum in vulputate at, tempus viverra turpis.</p>
+                            <p>{{index.texto}}</p>
                             <div class="card-body text-center">
-                                <span class="product-rating">4.6</span><span>/5</span>
-                                <div class="stars">
+                                <span class="product-rating">{{index.puntuacion}}</span><span>/5</span>
+                                <div *ngIf="index.puntuacion == 1">
+                                    <i class="fa fa-star"></i>
+                                </div>
+                                <div *ngIf="index.puntuacion == 2">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                </div>
+                                <div *ngIf="index.puntuacion == 3">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                </div>
+                                <div *ngIf="index.puntuacion == 4">
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="media g-mb-30 media-comment">
-                        <div class="media-body u-shadow-v18 g-bg-secondary g-pa-30">
-                            <div class="g-mb-15">
-                                <p class="h5 g-color-gray-dark-v1 mb-0 autor">John Doe</p>
-                            </div>
-                            <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue
-                            felis in faucibus ras purus odio, vestibulum in vulputate at, tempus viverra turpis.</p>
-                            <div class="card-body text-center">
-                                <span class="product-rating">4.6</span><span>/5</span>
-                                <div class="stars">
+                                <div *ngIf="index.puntuacion == 5">
+                                    <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
                                 </div>
+                                <p>&nbsp;</p>
+                                <hr> 
                             </div>
                         </div>
                     </div>

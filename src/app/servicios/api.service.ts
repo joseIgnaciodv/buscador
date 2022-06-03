@@ -5,6 +5,7 @@ import { Localidad } from '../modelos/localidad';
 import { environment } from 'src/environments/environment';
 import { Inmueble } from '../modelos/inmueble';
 import { LugarInteres } from '../modelos/lugar_interes';
+import { Reviews } from '../modelos/reviews';
 import { Usuario } from '../modelos/usuario';
 import { User } from '../modelos/user';
 import { AuthServicioService } from './auth-servicio.service';
@@ -13,6 +14,7 @@ import { AuthServicioService } from './auth-servicio.service';
 @Injectable({
   providedIn: 'root'
 })
+
 export class ApiService {
 
   constructor(private http: HttpClient, private auth: AuthServicioService) { }
@@ -40,6 +42,11 @@ export class ApiService {
   get_lugar_interes(id: number): Observable<LugarInteres>{
     let url = environment.apiUrl + "api/lugar_interes/" + id;
     return this.http.get<LugarInteres>(url);
+  }
+
+  get_reviews(id: number): Observable<Array<Reviews>>{
+    let url = environment.apiUrl + "api/reviews/" + id;
+    return this.http.get<Array<Reviews>>(url);
   }
 
   login(email: string, password: string): Observable<Usuario>{
