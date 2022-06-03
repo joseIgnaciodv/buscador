@@ -3,10 +3,21 @@ $light-blue: #A1B5D0;
 $red: #F36F61;
 $light-green: #BED442;
 $green: #83CB53;
+$black: black;
 
-.nav-link:hover{
-  background-color: #596d8d;
-  color: black;
+
+.logon-list__item {
+  display: inline-block;
+}
+
+.logon-list__link {
+  color: $black;
+  text-decoration: none;
+}
+
+
+.logon-list__link.Login:hover {
+  border-bottom: 2px solid $black;
 }
 
 .navbar-brand{
