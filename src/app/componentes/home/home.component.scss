@@ -1,3 +1,9 @@
+$blue: #34548B;
+$light-blue: #A1B5D0;
+$red: #F36F61;
+$light-green: #BED442;
+$green: #83CB53;
+
 .nav-link:hover{
   background-color: #596d8d;
   color: black;
@@ -15,6 +21,20 @@
   background-position: center;
 }
 
+.btn-circle {
+  background-color: $light-green;
+  border-color: $light-green;
+  width: 30px;
+  height: 30px;
+  line-height: 20px;
+  text-align: center;
+  padding: 0;
+  border-radius: 50%;
+}
+.btn-circle:hover {
+  background-color: $green;
+  border-color: $green;
+}
 .fade-in-image {
     animation: fadeIn 5s;
     -webkit-animation: fadeIn 5s;
@@ -104,3 +124,18 @@
         }
     }
   }
+.modal-header{
+  background-color: $green;
+}
+.modal-title{
+  color: white;
+}
+.modal-btn{
+  color: white;
+  background-color: $green;
+  border-color: $green;
+}
+.modal-btn:hover{
+  background-color: $light-green;
+  border-color: $light-green;
+}

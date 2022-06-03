@@ -18,7 +18,7 @@
 
       <div class="contenedor_h1">
         <div class="fade-in-image">
-          <h1>¿En qué estás interesado?</h1>
+          <h1>¿En qué estás interesado?<button (click)="openPopup()" class="btn btn-info btn-circle m-1"><i class="fa fa-info"></i></button></h1>
         </div>
         <br>
       </div>
@@ -54,3 +54,26 @@
       </div>
     </div>
   </div>
+
+<!-- Modal -->
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
+  <div class="modal-dialog" role="document">
+	  <div class="modal-content">
+	  <div class="modal-header">
+      <h3 class="modal-title">NBHD Informa</h3>
+    </div>
+    <div class="modal-body">
+      <ul>
+        <li>Es importante que siga la sugerencia que le aporta el buscador, sino la busqueda no podría funcionar</li>
+        <li>Una vez realizada la busqueda puede que tarde más de lo normal si es la primera vez que se introduce el municipio, pues tiene que procesar todos los inmuebles y realizar los calculos necesarios</li>
+      </ul>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn modal-btn"
+          (click)="closePopup()">
+      Close
+      </button>
+    </div>
+    </div>
+  </div>
+</div>
