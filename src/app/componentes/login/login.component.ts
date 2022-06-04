@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
 
   correo: string = "";
   pass: string = "";
+  displayStyle = "none";
 
   constructor(private api: ApiService, private auth: AuthServicioService, private router: Router) { }
   
@@ -22,8 +23,9 @@ export class LoginComponent implements OnInit {
     })
     await this.delay(1000);
     if (localStorage.getItem('token')==null){
-      alert("Usuario o contraseña incorrectos");
+      this.displayStyle = "block";
     } else {
+      
       this.router.navigate(['/userconfig']);
     }
   }
@@ -32,5 +34,7 @@ export class LoginComponent implements OnInit {
   }
   ngOnInit(): void {
   }
-
+  closePopup() {
+    this.displayStyle = "none";
+  }
 }

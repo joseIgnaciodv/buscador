@@ -12,3 +12,22 @@
         </div>
     </form>
 </div>
+<!-- Modal -->
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+        <h3 class="modal-title">NBHD Informa</h3>
+      </div>
+      <div class="modal-body">
+        <p> Usuario incorrecto, puede intentarlo de nuevo</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn modal-btn"
+            (click)="closePopup()">
+        Cerrar
+        </button>
+      </div>
+      </div>
+    </div>
+  </div>
