@@ -74,12 +74,12 @@ export class ApiService {
   }
 
   get_max_odio(): Observable<Localidad>{
-    let url = "http://127.0.0.1:8000/api/get_max_municipio_odio";
+    let url = environment.apiUrl + "/api/get_max_municipio_odio";
     return this.http.get<Localidad>(url);
   }
 
   get_num_inmuebles(num: number): Observable<ResultadoInmueble[]>{
-    let url = "http://127.0.0.1:8000/api/get_num_inmuebles/" + num;
+    let url = environment.apiUrl + "/api/get_num_inmuebles/" + num;
     return this.http.get<ResultadoInmueble[]>(url);
   }
 
