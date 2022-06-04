@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/servicios/api.service';
-import { NgForm } from '@angular/forms';
 import { AuthServicioService } from 'src/app/servicios/auth-servicio.service';
 import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-login',
@@ -13,18 +13,28 @@ export class LoginComponent implements OnInit {
 
   correo: string = "";
   pass: string = "";
+  displayStyle = "none";
 
   constructor(private api: ApiService, private auth: AuthServicioService, private router: Router) { }
   
-  login(){
+  async login(){
     this.api.login(this.correo, this.pass).subscribe(usuario =>{
       this.auth.guardar_localStorage(usuario.access_token, usuario.expires_in);
-      this.router.navigate(['/userconfig']);
     })
-    
+    await this.delay(1000);
+    if (localStorage.getItem('token')==null){
+      this.displayStyle = "block";
+    } else {
+      
+      this.router.navigate(['/userconfig']);
+    }
   }
-
+  delay(ms: number) {
+    return new Promise( resolve => setTimeout(resolve, ms) );
+  }
   ngOnInit(): void {
   }
-
+  closePopup() {
+    this.displayStyle = "none";
+  }
 }

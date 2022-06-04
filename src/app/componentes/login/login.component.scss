@@ -55,36 +55,18 @@ $green: #83CB53;
         padding: 50px 20px;
     }
 }
-
-.input, .btn {
-  height: 3.125rem;
+.modal-header{
+    background-color: $red;
 }
-
-.btn {
-  width: 100%;
-  letter-spacing: 1px;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 900;
-  font-size: 13px;
-  text-align: center;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  transition: background-color .4s;
-  padding: 0.5em 1.2em;
-  background: rgb(74, 167, 105);
-  border: 2px solid rgb(74, 167, 105);
+.modal-title{
+    color: white;
 }
-
-.btn:hover {
-  box-shadow: inset 0 0 20px rgb(74, 167, 105);
+.modal-btn{
+    color: white;
+    background-color: $red;
+    border-color: $red;
 }
-
-.btn:active {
-  transform: scale(0.98);
-  box-shadow: 3px 2px 22px 1px rgb(74, 167, 105);
+.modal-btn:hover{
+    background-color: #cc6155;
+    border-color: #cc6155;
 }
