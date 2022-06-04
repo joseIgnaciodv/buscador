@@ -147,4 +147,9 @@ export class UserConfigComponent implements OnInit {
     })
   }
 
+  logout(){
+    this.auth.eliminar_localStorage()
+    this.router.navigateByUrl("/")
+  }
+
 }
