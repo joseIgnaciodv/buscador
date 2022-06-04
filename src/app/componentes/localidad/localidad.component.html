@@ -1,12 +1,19 @@
 <h1 class="ppal"> Inmuebles en {{localidad}} </h1>
 
-<p class="odio-output"> <strong> Odio: </strong> {{num_odio}} </p>
-
-
-<div *ngFor="let inmueble of lista_inmuebles;" class="container" [routerLink]="['/inmuebles', inmueble.id]">
+<div *ngIf="num_odio>=80;" class="container-odio">
+  <div class="card-odio">
+    <p class="odio-output"> <strong> Odio: </strong> {{num_odio}} </p>
+  </div>
+</div>
+<div *ngIf="num_odio<80;" class="container-odio">
+  <div class="card-no-odio">
+    <p class="odio-output"> <strong> Odio: </strong> {{num_odio}} </p>
+  </div>
+</div>
+<div class="container-cards">
+  <div *ngFor="let inmueble of lista_inmuebles;" class="container" [routerLink]="['/inmuebles', inmueble.id]">
     <div class="row pt-5 m-auto">
       <div class="col-md-12 col-lg-12 pb-12">
-        <!-- Copy the content below until next comment -->
         <div class="card card-custom bg-white border-white border-0">
           <div class="card-custom-avatar">
             <img class="inmueble-image" src={{inmueble.imagenes[0]}} alt="Avatar" />
@@ -16,14 +23,11 @@
             <p class="card-title">{{inmueble.precio}}</p>
             <p class="card-text descripcion">{{inmueble.descripcion}}</p>
           </div>
-
           <div class="card-footer" style="background: inherit; border-color: inherit;">
-            <a href="#" class="btn btn-primary">{{inmueble.telefono}}</a>
+            <a class="tlf-button btn btn-primary">{{inmueble.telefono}}</a>
           </div>
         </div>
-
-<!-- imagen
-
-direccion
-precio
-caracterisitcas -->
+      </div>
+    </div>
+  </div>
+</div>

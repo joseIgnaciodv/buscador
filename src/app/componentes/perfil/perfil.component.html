@@ -1,0 +1,15 @@
+<div class="registration-form">
+    <form>
+        <img class="form-icon img-fluid" src="assets/images/NBHD.png" alt="">
+        <h1 class="form-title">Perfil</h1>
+        <div class="form-group">
+            <input type="text" class="form-control item" id="email" name="email" placeholder="Actualiza Email" [(ngModel)]="correo">
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control item" id="password" name="password" placeholder="Actualiza Password" [(ngModel)]="pass">
+        </div>
+        <div class="form-group">
+            <button type="button" class="btn btn-block login" (click)="get_user()">Actualizar perfil</button>
+        </div>
+    </form>
+</div>

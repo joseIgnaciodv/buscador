@@ -5,16 +5,20 @@ import { Localidad } from '../modelos/localidad';
 import { environment } from 'src/environments/environment';
 import { Inmueble } from '../modelos/inmueble';
 import { LugarInteres } from '../modelos/lugar_interes';
+import { Reviews } from '../modelos/reviews';
 import { Usuario } from '../modelos/usuario';
+import { User } from '../modelos/user';
+import { AuthServicioService } from './auth-servicio.service';
 import { ResultadoInmueble } from '../modelos/resultado-inmueble';
 
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class ApiService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private auth: AuthServicioService) { }
 
   get_localidad(localidad: string): Observable<Localidad>{
     let url = environment.apiUrl + "api/localidad/" + localidad;
@@ -41,6 +45,11 @@ export class ApiService {
     return this.http.get<LugarInteres>(url);
   }
 
+  get_reviews(id: number): Observable<Array<Reviews>>{
+    let url = environment.apiUrl + "api/reviews/" + id;
+    return this.http.get<Array<Reviews>>(url);
+  }
+
   login(email: string, password: string): Observable<Usuario>{
     let datos = {'email': email, 'password': password}
     let url = environment.apiUrl + "api/auth/login";
@@ -52,14 +61,26 @@ export class ApiService {
     return this.http.get<Localidad[]>(url);
   }
 
-  get_num_inmuebles(num: number): Observable<ResultadoInmueble[]>{
-    let url = environment.apiUrl + "api/get_num_inmuebles/" + num;
-    return this.http.get<ResultadoInmueble[]>(url);
+  get_user(token: string | null): Observable<User> {
+    let url = environment.apiUrl + "api/auth/user-profile";
+    return this.http.get<User>(url, { headers: { Authorization: 'Bearer ' + token } });
+  }
+
+  updateUser(correo: string, pass: string, id: number) {
+    let datos = {'email': correo, 'password': pass}
+    let url = environment.apiUrl + "api/usuarios/actualizar/" + id;
+    return this.http.put<number>(url, datos);
+
   }
 
   get_max_odio(): Observable<Localidad>{
-    let url = environment.apiUrl + "api/get_max_municipio_odio";
+    let url = "http://127.0.0.1:8000/api/get_max_municipio_odio";
     return this.http.get<Localidad>(url);
+  }
+
+  get_num_inmuebles(num: number): Observable<ResultadoInmueble[]>{
+    let url = "http://127.0.0.1:8000/api/get_num_inmuebles/" + num;
+    return this.http.get<ResultadoInmueble[]>(url);
   }
 
 }

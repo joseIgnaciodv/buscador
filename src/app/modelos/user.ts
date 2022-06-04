@@ -3,6 +3,7 @@ export interface User {
     name: string,
     email: string,
     email_verified_at: Date | null,
+    pass: string,
     created_at: Date,
     updated_at: Date
 }

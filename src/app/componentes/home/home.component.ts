@@ -52,6 +52,15 @@ export class HomeComponent implements OnInit {
     );
   }
 
+  displayStyle = "none";
+  
+  openPopup() {
+    this.displayStyle = "block";
+  }
+  closePopup() {
+    this.displayStyle = "none";
+  }
+
   private _filter(val: string): string[] {
     const formatVal = val.toLowerCase();
     return this.countries.filter(country => country.toLowerCase().indexOf(formatVal) === 0);
