@@ -32,7 +32,7 @@
                     <div class="input_localidad">
                         <mat-form-field appearance="outline">
                             <mat-label>Numero de localidades</mat-label>
-                            <input matInput [(ngModel)]="num_inmuebles" value="{{num_elementos}}">
+                            <input matInput (keyup.enter)="renderizar_grafica_barra()" [(ngModel)]="num_inmuebles" value="{{num_elementos}}">
                         </mat-form-field>
                     </div>
         
