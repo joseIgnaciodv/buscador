@@ -6,6 +6,7 @@ import { environment } from 'src/environments/environment';
 import { Inmueble } from '../modelos/inmueble';
 import { LugarInteres } from '../modelos/lugar_interes';
 import { Usuario } from '../modelos/usuario';
+import { ResultadoInmueble } from '../modelos/resultado-inmueble';
 
 
 @Injectable({
@@ -49,6 +50,16 @@ export class ApiService {
   get_top_municipios(num: number): Observable<Localidad[]>{
     let url = environment.apiUrl + "api/get_top_municipios/" + num;
     return this.http.get<Localidad[]>(url);
+  }
+
+  get_num_inmuebles(num: number): Observable<ResultadoInmueble[]>{
+    let url = environment.apiUrl + "api/get_num_inmuebles/" + num;
+    return this.http.get<ResultadoInmueble[]>(url);
+  }
+
+  get_max_odio(): Observable<Localidad>{
+    let url = environment.apiUrl + "api/get_max_municipio_odio";
+    return this.http.get<Localidad>(url);
   }
 
 }

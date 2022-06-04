@@ -7,19 +7,57 @@
             </div>
         </div>
 
-        <div class="contenedor_municipios">
-            <mat-form-field class="num_municipios" appearance="outline">
-                <mat-label>Numero municipios</mat-label>
-                <mat-select [(ngModel)]="num_elementos">
-                    <mat-option (click)="renderizar_grafica()" *ngFor="let opcion of opciones" value={{opcion}}>
-                    {{opcion}}
-                    </mat-option>
-                </mat-select>
-            </mat-form-field>
+        <div class="contenedor_dashboard">
+            <div class="primer_contenedor">
+                <div class="contenedor_maxOdio">
+                    <div class="espacio_cabecera">
+                        <span>Municipio con mas delitos de odio:</span>
+                        <mat-icon>thumb_down</mat-icon>
+                    </div>
+                
+                    <div class="contenedor_municipio">
+                        <span>{{municipio}}</span>
+                    </div>
+                
+                    <div class="odio">
+                        <span>{{odio}}%</span>
+                    </div>
+                
+                    <div class="titulo_odio">
+                        <span>Delitos de Odio</span>
+                    </div>
+                </div>
         
-            <div class="chart-container">
-                <canvas id="my-chart">
-                </canvas>
+                <div class="contenedor_inmuebles">
+                    <div class="input_localidad">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Numero de localidades</mat-label>
+                            <input matInput (keyup.enter)="" [(ngModel)]="num_inmuebles" value="{{num_elementos}}">
+                        </mat-form-field>
+                    </div>
+        
+                    <div class="contenedor_linea">
+                        <canvas id="grafica_linea">
+                        </canvas>
+                    </div>
+                </div>
+        
+            </div>
+            
+            <div class="contenedor_municipios">
+                <mat-form-field class="num_municipios" appearance="outline">
+                    <mat-label>Numero municipios</mat-label>
+                    <mat-select [(ngModel)]="num_elementos">
+                      <mat-option (click)="renderizar_grafica()" *ngFor="let opcion of opciones" value={{opcion}}>
+                        {{opcion}}
+                      </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            
+                <div class="chart-container">
+                  <canvas id="tarta">
+                  </canvas>
+                </div>
             </div>
         </div>
 

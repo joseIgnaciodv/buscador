@@ -15,12 +15,16 @@ export class UserConfigComponent implements OnInit {
 
   constructor(private auth: AuthServicioService, private router: Router, private api: ApiService) { }
 
+  municipio: string = "";
+  odio: number = 0.0;
   opciones = [3,5,7];
   datos: number[] = [];
   labels: string[] = [];
-  public chart!: Chart;
+  public grafica_tarta!: Chart;
+  public grafica_barra!: Chart;
 
-  num_elementos: number = 3;
+  num_elementos: number = 0;
+  num_inmuebles: number = 2;
 
   set_colores(){
     let colores: string[] = [];
@@ -34,6 +38,48 @@ export class UserConfigComponent implements OnInit {
       colores = ['#F652FF', '#6652FF', '#FFCD56', '#52CEFF', '#52FFA0', '#FF5286', '#CB52FF']
     }
     return colores;
+  }
+
+  crear_grafica_barra(): void{
+    let localidades: string[] = []
+    let inmuebles: number[] = []
+    this.api.get_num_inmuebles(this.num_inmuebles).subscribe(respuesta =>{
+      respuesta.forEach(element => {
+        localidades.push(element.localidad)
+        inmuebles.push(element.inmuebles)
+      });
+      Chart.register(...registerables);
+      const data = {
+        labels: localidades,
+        datasets: [{
+          data: inmuebles
+        }]
+      };
+  
+      const options = {
+        plugins: {
+          title: {
+            display: true,
+            text: 'Inmuebles totales por localidad'
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            display: true
+          }
+        }
+      }
+  
+      const config: ChartConfiguration = {
+        type: 'bar',
+        data: data,
+        options: options
+      }
+  
+      const chartItem: ChartItem = document.getElementById('grafica_linea') as ChartItem
+      this.grafica_barra = new Chart(chartItem, config)
+    })
   }
 
   crear_grafica_tarta(): void {
@@ -73,8 +119,8 @@ export class UserConfigComponent implements OnInit {
         options: options
       }
   
-      const chartItem: ChartItem = document.getElementById('my-chart') as ChartItem
-      this.chart = new Chart(chartItem, config)
+      const chartItem: ChartItem = document.getElementById('tarta') as ChartItem
+      this.grafica_tarta = new Chart(chartItem, config)
     })
 
   }
@@ -82,17 +128,23 @@ export class UserConfigComponent implements OnInit {
   renderizar_grafica(){
     this.datos.splice(0)
     this.labels.splice(0)
-    this.chart.destroy()
+    this.grafica_tarta.destroy()
     this.crear_grafica_tarta()
   }
 
-  logout(){
-    this.auth.eliminar_localStorage()
-    this.router.navigateByUrl("/")
+  renderizar_grafica_barra(){
+    this.grafica_barra.destroy()
+    this.crear_grafica_barra()
   }
 
   ngOnInit(): void {
+    this.crear_grafica_barra();
+    this.num_elementos = 3;
     this.crear_grafica_tarta()
+    this.api.get_max_odio().subscribe(respuesta =>{
+      this.municipio = respuesta.municipio;
+      this.odio = respuesta.odio;
+    })
   }
 
 }
