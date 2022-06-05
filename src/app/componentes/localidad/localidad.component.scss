@@ -15,24 +15,37 @@ $green: #83CB53;
 }
 .container-odio{
   text-align: center;
-  margin-left: 30%;
-  margin-right: 30%;
-}
-.card-no-odio{
-  padding-top: 40px;
-  padding-bottom: 40px;
-  background: linear-gradient(to bottom right, $green 40%, $light-green 100%);
-  border-radius: 20px;
-  box-shadow: 5px 5px 20px rgba($light-blue, 10%);
-  perspective: 40px;
+  margin-top: 30px;
+  margin-left: 25vw;
+  margin-right: 25vw;
 }
 .card-odio{
-  padding-top: 40px;
-  padding-bottom: 40px;
-  background: linear-gradient(to bottom right, $red 40%, rgb(251, 60, 60) 100%);
-  border-radius: 20px;
-  box-shadow: 5px 5px 20px rgba($red, 10%);
-  perspective: 40px;
+  background-color: #fac2bb;
+}
+.card-no-odio{
+  background-color: #b2f8ad;
+}
+.num-odio{
+  font-size: 20px;
+  margin: 20px;
+}
+.odio-title{
+  color: white;
+  font-size: larger;
+}
+.btn-circle {
+  background-color: $light-blue;
+  border-color: $light-blue;
+  width: 20px;
+  height: 20px;
+  line-height: 5px;
+  text-align: center;
+  padding: 0;
+  border-radius: 50%;
+}
+.btn-circle:hover {
+  background-color: $blue;
+  border-color: $blue;
 }
 .container-cards{
   margin-bottom: 5vw;
@@ -110,4 +123,19 @@ $green: #83CB53;
     height: 330px;
     width: 370px;
   }
+}
+.modal-header{
+  background-color: $light-blue;
+}
+.modal-title{
+  color: white;
+}
+.modal-btn{
+  color: white;
+  background-color: $light-blue;
+  border-color: $light-blue;
+}
+.modal-btn:hover{
+  background-color: $blue;
+  border-color: $blue;
 }

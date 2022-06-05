@@ -1,14 +1,15 @@
 <app-top-bar></app-top-bar>
 <h1 class="ppal"> Inmuebles en {{localidad}} </h1>
 
-<div *ngIf="num_odio>=80;" class="container-odio">
-  <div class="card-odio">
-    <p class="odio-output"> <strong> Odio: </strong> {{num_odio}} </p>
-  </div>
-</div>
-<div *ngIf="num_odio<80;" class="container-odio">
-  <div class="card-no-odio">
-    <p class="odio-output"> <strong> Odio: </strong> {{num_odio}} </p>
+<div class="container-odio">
+  <div class="card card-center {{estilo}}">
+    <div class="card-body">
+      <div class="stars">
+        <i class="{{icono}}" style='font-size:50px;'></i>
+        <p class="num-odio">{{odio}}<button (click)="openPopup()" class="btn btn-info btn-circle m-1" style='font-size:12px;'><i class="fa fa-info"></i></button></p>
+      </div>
+      <h4 class="">Odio  -->  {{num_odio}}</h4>
+    </div>
   </div>
 </div>
 <div class="container-cards">
@@ -29,6 +30,29 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
+  <div class="modal-dialog" role="document">
+	  <div class="modal-content">
+	  <div class="modal-header">
+      <h3 class="modal-title">NBHD Informa</h3>
+    </div>
+    <div class="modal-body">
+      <ul>
+        <li>Se considera un buen odio si es menor de 80 sobre 100 en nuestra escala y malo si lo supera.</li>
+        <li>Esta media se ha establecido conforme a múltiples datos extraídos de otras localizaciones aplicando técnicas de Inteligencia Artificial y Machine Learning.</li>
+      </ul>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn modal-btn"
+          (click)="closePopup()">
+      Cerrar
+      </button>
+    </div>
     </div>
   </div>
 </div>

@@ -13,6 +13,9 @@ export class LocalidadComponent implements OnInit {
   num_odio: number = 0;
   localidad: string = "";
   tipo: string = "";
+  odio:string = '';
+  icono:string = '';
+  estilo:string = '';
 
   lista_inmuebles: Array<Inmueble> = []
 
@@ -35,9 +38,27 @@ export class LocalidadComponent implements OnInit {
     this.tipo = this.route.snapshot.params['tipo']
     this.api.get_localidad(this.localidad).subscribe(respuesta =>{
       this.num_odio = respuesta.odio;
+      if(Number(this.num_odio) > 80){
+        this.odio = 'Localidad con odio alto';
+        this.icono = 'bi-emoji-frown-fill';
+        this.estilo = 'border-danger text-danger card-odio';
+      }else{
+        this.odio = 'Localidad con odio bajo';
+        this.icono = 'bi-emoji-smile-fill';
+        this.estilo = 'border-success text-success card-no-odio';
+      }
       this.get_inmuebles();
     })
 
+  }
+
+  displayStyle = "none";
+  
+  openPopup() {
+    this.displayStyle = "block";
+  }
+  closePopup() {
+    this.displayStyle = "none";
   }
 
 }
