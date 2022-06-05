@@ -27,6 +27,7 @@ import { LoginComponent } from './componentes/login/login.component';
 import { UserConfigComponent } from './componentes/user-config/user-config.component';
 import { ReviewsComponent } from './componentes/reviews/reviews.component';
 import { PerfilComponent } from './componentes/perfil/perfil.component';
+import { TopBarComponent } from './componentes/top-bar/top-bar.component';
 
 
 
@@ -43,6 +44,7 @@ import { PerfilComponent } from './componentes/perfil/perfil.component';
     UserConfigComponent,
     ReviewsComponent,
     PerfilComponent,
+    TopBarComponent,
 
   ],
   imports: [
