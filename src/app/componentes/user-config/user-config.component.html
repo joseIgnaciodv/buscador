@@ -1,6 +1,4 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
    <app-top-bar></app-top-bar>
-   <div class="pb-1">
    <section class="seccion-perfil-usuario mb">
         <div class="text-center m-5">
         <div class="card-header">
@@ -8,32 +6,26 @@
         </div>
         <div class="row m-4">
           <div class="col-sm-6">
-            <!-- <div class="card"> -->
               <div class="card-body">
-                <a href="/perfil" class="btn btn-top1 pr-5 pl-5"> Actualizar Email</a>
-                <p class="card-text"></p>
+                <button class="btn btn-outline-secondary pr-5 pl-5" onclick="window.location.href='/perfilpass'">Actualizar Password</button>
               </div>
             </div>
-          <!-- </div> -->
           <div class="col-sm-6">
-            <!-- <div class="card"> -->
               <div class="card-body">
-                <a href="/perfilpass" class="btn btn-top1 pr-5 pl-5"> Actualizar Password</a>
-                <p class="card-text"></p>
+                <button class="btn btn-outline-secondary pr-5 pl-5" onclick="window.location.href='/perfil'">Actualizar Email</button>
               </div>
             </div>
           </div>
-        <div class="perfil-usuario-close m-4 mt-5">
-              <a (click)="logout()" class="effect effect-1">Cerrar Sesión</a>
+        <div class="perfil-usuario-close m-4">
+              <a (click)="logout()" class="effect effect-1" style="background-color:red;">Cerrar Sesión</a>
         </div>
-
         <div class="card-header">
           Dashboard
         </div>
         <div class="card text-center mb-4 mt-4">
           <div class="card-body">
             <h5 class="card-title">{{municipio}}</h5>
-            <p class="card-text">Porcentaje de delitos de odio: {{odio}}% </p>
+            <p class="card-text">Porcentaje de delitos de odio: {{odio}}%</p>
             <mat-icon style="color:red ;">thumb_down</mat-icon>
           </div>
         </div>
@@ -43,7 +35,7 @@
               <div class="card-body">
                 <div class="input_localidad">
                   <mat-form-field appearance="outline">
-                      <mat-label>Numero de localidades</mat-label>
+                      <mat-label>Número de localidades</mat-label>
                       <input matInput (keyup.enter)="renderizar_grafica_barra()" [(ngModel)]="num_inmuebles" value="{{num_elementos}}">
                   </mat-form-field>
               </div>
@@ -58,21 +50,22 @@
             <div class="card m-2">
               <div class="card-body">
                 <mat-form-field class="num_municipios" appearance="outline">
-                  <mat-label>Numero municipios</mat-label>
+                  <mat-label>Número municipios</mat-label>
                   <mat-select [(ngModel)]="num_elementos">
                     <mat-option (click)="renderizar_grafica()" *ngFor="let opcion of opciones" value={{opcion}}>
                       {{opcion}}
                     </mat-option>
                   </mat-select>
               </mat-form-field>
+              <div class="box">
               <div class="chart-container">
                 <canvas id="tarta">
                 </canvas>
               </div>
             </div>
             </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
-  </div>
