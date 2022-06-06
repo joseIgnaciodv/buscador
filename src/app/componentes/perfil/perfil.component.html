@@ -1,15 +1,34 @@
 <div class="registration-form">
     <form>
         <img class="form-icon img-fluid" src="assets/images/NBHD.png" alt="">
-        <h1 class="form-title">Perfil</h1>
+        <h1 class="form-title">Actualiza Email</h1>
         <div class="form-group">
-            <input type="text" class="form-control item" id="email" name="email" placeholder="Actualiza Email" [(ngModel)]="correo">
+            <input type="text" class="form-control item" id="email" name="email" placeholder="Email" [(ngModel)]="correo">
         </div>
         <div class="form-group">
-            <input type="password" class="form-control item" id="password" name="password" placeholder="Actualiza Password" [(ngModel)]="pass">
+            <input type="text" class="form-control item" id="repite_correo" name="repite_correo" placeholder="Repite Email" [(ngModel)]="repite_correo">
         </div>
         <div class="form-group">
-            <button type="button" class="btn btn-block login" (click)="get_user()">Actualizar perfil</button>
+            <button type="button" class="btn btn-block login" (click)="get_user()">Verificar email</button>
         </div>
     </form>
 </div>
+<!-- Modal -->
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+        <h3 class="modal-title">NBHD Informa</h3>
+      </div>
+      <div class="modal-body">
+        <p> Emails diferentes, puede intentarlo de nuevo</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn modal-btn"
+            (click)="closePopup()">
+        Cerrar
+        </button>
+      </div>
+      </div>
+    </div>
+  </div>

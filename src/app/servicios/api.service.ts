@@ -66,11 +66,16 @@ export class ApiService {
     return this.http.get<User>(url, { headers: { Authorization: 'Bearer ' + token } });
   }
 
-  updateUser(correo: string, pass: string, id: number) {
-    let datos = {'email': correo, 'password': pass}
-    let url = environment.apiUrl + "api/usuarios/actualizar/" + id;
+  updateUserEmail(correo: string, id: number) {
+    let datos = {'email': correo}
+    let url = environment.apiUrl + "api/usuarios/actualizar_email/" + id;
     return this.http.put<number>(url, datos);
+  }
 
+  updateUserPass(password: string, id: number) {
+    let datos = {'password': password}
+    let url = environment.apiUrl + "api/usuarios/actualizar_password/" + id;
+    return this.http.put<number>(url, datos);
   }
 
   get_max_odio(): Observable<Localidad>{

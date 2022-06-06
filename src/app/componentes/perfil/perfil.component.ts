@@ -12,29 +12,37 @@ import { AuthServicioService } from 'src/app/servicios/auth-servicio.service';
 export class PerfilComponent implements OnInit {
 
   correo: string = "";
-  pass: string = "";
+  repite_correo: string = "";
   id: number = 0;
+  displayStyle = "none";
 
   constructor(private api: ApiService, private auth: AuthServicioService, private router: Router) { }
 
   get_user(){
-    this.api.get_user(this.auth.get_token()).subscribe(user => {
-      this.id = user.id;
-      this.api.updateUser(this.correo, this.pass, this.id).subscribe(res =>{
-        if(res == 200){
-          console.log("Usuario actualizado");
-          alert("Usuario actualizado");
-        }
-      })
+    if (this.repite_correo == this.correo){
+      this.api.get_user(this.auth.get_token()).subscribe(user => {
+        this.id = user.id;
+        this.api.updateUserEmail(this.correo, this.id).subscribe(res =>{
+          if(res == 200){
+            console.log("Usuario actualizado");
+            this.router.navigate(['/userconfig']);
+          }
+        })
+      }
+      );
+    } else {
+      this.displayStyle = "block";
     }
-    );
-
   }
 
 
   ngOnInit(): void {
-    console.log(this.auth.isLogged());
-    console.log(this.auth.get_token());
+    //console.log(this.auth.isLogged());
+    //console.log(this.auth.get_token());
+  }
+
+  closePopup() {
+    this.displayStyle = "none";
   }
 
 }

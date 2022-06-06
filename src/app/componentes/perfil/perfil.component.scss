@@ -59,3 +59,19 @@ $green: #83CB53;
         padding: 50px 20px;
     }
 }
+
+.modal-header{
+    background-color: $red;
+}
+.modal-title{
+    color: white;
+}
+.modal-btn{
+    color: white;
+    background-color: $red;
+    border-color: $red;
+}
+.modal-btn:hover{
+    background-color: #cc6155;
+    border-color: #cc6155;
+}
