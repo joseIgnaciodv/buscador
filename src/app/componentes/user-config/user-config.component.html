@@ -1,67 +1,77 @@
-    <section class="seccion-perfil-usuario">
-        <div class="perfil-usuario-header">
-            <div class="perfil-usuario-portada">
-                <div class="perfil-usuario-avatar">
-                    <img class="img-fluid" src="assets/images/NBHD.png" alt="">
-                </div>
+   <app-top-bar></app-top-bar>
+   <div class="pb-1">
+   <section class="seccion-perfil-usuario mb">
+        <div class="text-center m-5">
+        <div class="card-header">
+          Modificar datos del usuario
+        </div>
+        <div class="row m-4">
+          <div class="col-sm-6">
+            <!-- <div class="card"> -->
+              <div class="card-body">
+                <h5 class="card-title">Modificar email</h5>
+                <p class="card-text"></p>
+              </div>
             </div>
+          <!-- </div> -->
+          <div class="col-sm-6">
+            <!-- <div class="card"> -->
+              <div class="card-body">
+                <h5 class="card-title">Modificar contraseña</h5>
+                <p class="card-text"></p>
+              </div>
+            </div>
+          </div>
+        <div class="perfil-usuario-close m-4 mt-5">
+              <a (click)="logout()" class="effect effect-1">Cerrar Sesión</a>
         </div>
 
-        <div class="contenedor_dashboard">
-            <div class="primer_contenedor">
-                <div class="contenedor_maxOdio">
-                    <div class="espacio_cabecera">
-                        <span>Municipio con mas delitos de odio:</span>
-                        <mat-icon>thumb_down</mat-icon>
-                    </div>
-                
-                    <div class="contenedor_municipio">
-                        <span>{{municipio}}</span>
-                    </div>
-                
-                    <div class="odio">
-                        <span>{{odio}}%</span>
-                    </div>
-                
-                    <div class="titulo_odio">
-                        <span>Delitos de Odio</span>
-                    </div>
-                </div>
-        
-                <div class="contenedor_inmuebles">
-                    <div class="input_localidad">
-                        <mat-form-field appearance="outline">
-                            <mat-label>Numero de localidades</mat-label>
-                            <input matInput (keyup.enter)="renderizar_grafica_barra()" [(ngModel)]="num_inmuebles" value="{{num_elementos}}">
-                        </mat-form-field>
-                    </div>
-        
-                    <div class="contenedor_linea">
-                        <canvas id="grafica_linea">
-                        </canvas>
-                    </div>
-                </div>
-        
+        <div class="card-header">
+          Dashboard
+        </div>
+        <div class="card text-center mb-4 mt-4">
+          <div class="card-body">
+            <h5 class="card-title">{{municipio}}</h5>
+            <p class="card-text">Porcentaje de delitos de odio: {{odio}}% </p>
+            <mat-icon style="color:red ;">thumb_down</mat-icon>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="card m-2">
+              <div class="card-body">
+                <div class="input_localidad">
+                  <mat-form-field appearance="outline">
+                      <mat-label>Numero de localidades</mat-label>
+                      <input matInput (keyup.enter)="renderizar_grafica_barra()" [(ngModel)]="num_inmuebles" value="{{num_elementos}}">
+                  </mat-form-field>
+              </div>
+              <div class="contenedor_linea">
+                <canvas id="grafica_linea">
+                </canvas>
             </div>
-            
-            <div class="contenedor_municipios">
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="card m-2">
+              <div class="card-body">
                 <mat-form-field class="num_municipios" appearance="outline">
-                    <mat-label>Numero municipios</mat-label>
-                    <mat-select [(ngModel)]="num_elementos">
-                      <mat-option (click)="renderizar_grafica()" *ngFor="let opcion of opciones" value={{opcion}}>
-                        {{opcion}}
-                      </mat-option>
-                    </mat-select>
-                </mat-form-field>
-            
-                <div class="chart-container">
-                  <canvas id="tarta">
-                  </canvas>
-                </div>
+                  <mat-label>Numero municipios</mat-label>
+                  <mat-select [(ngModel)]="num_elementos">
+                    <mat-option (click)="renderizar_grafica()" *ngFor="let opcion of opciones" value={{opcion}}>
+                      {{opcion}}
+                    </mat-option>
+                  </mat-select>
+              </mat-form-field>
+              <div class="chart-container">
+                <canvas id="tarta">
+                </canvas>
+              </div>
             </div>
+            </div>
+          </div>
         </div>
-
-        <div class="perfil-usuario-close">
-            <li (click)="logout()"><i class="icono fas fa-power-off"></i> Cerrar Sesión</li>
-        </div>
+      </div>
     </section>
+  </div>

@@ -1,4 +1,17 @@
 
+.card-header{
+  background-color: #34548B;
+  font-size: 20px;
+  color: white;
+  letter-spacing: 2px;
+}
+
+.card-title{
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
 .contenedor_maxOdio{
   width: 80%;
   margin: 2% 10%;
@@ -98,13 +111,57 @@
   width: 100%;
 }
 
+.effect {
+  text-align: center;
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  background-color: red;
+  color: white;
+  font-size: 16px;
+  padding: 10px 0px;
+  width: 150px;
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.effect.effect-1 {
+  transition: all 0.2s linear 0s;
 
+  &:before {
+    content: "\f061";
+    font-family: FontAwesome;
+    font-size: 15px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    height: 100%;
+    width: 40px;
+    transition: all 0.2s linear 0s;
+  }
+
+  &:hover {
+    text-indent: -20px;
+
+    &:before {
+      opacity: 1;
+      text-indent: 0px;
+    }
+  }
+}
 
 .chart-container{
   margin-top: 3%;
-  width: 100%;
+  width: 54%;
   bottom: 0;
   margin-bottom: 3%;
+  align-items: center;
+  text-align: center;
+  margin-left: 23%;
 }
 
 .contenedor_linea{
@@ -114,7 +171,7 @@
 }
 
 #tarta{
-  width: 100%;
+  width: 50%;
 }
 
 #grafica_linea{
