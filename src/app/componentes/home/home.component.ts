@@ -17,6 +17,8 @@ nombres = results
 })
 export class HomeComponent implements OnInit {
 
+  
+
   tipos: Array<String> = ["Pisos", "Oficinas", "Naves", "Garajes"]
   inmueble: string = "";
   localidad: string = "";
@@ -44,12 +46,15 @@ export class HomeComponent implements OnInit {
     }
   }
 
+
   ngOnInit(): void {
     this.filCountries = this.control.valueChanges.pipe(
       debounceTime(1000),
       startWith(''),
       map(val => this._filter(val))
     );
+
+
   }
 
   displayStyle = "none";

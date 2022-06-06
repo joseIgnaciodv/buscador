@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { LugarInteres } from 'src/app/modelos/lugar_interes';
 import { ApiService } from 'src/app/servicios/api.service';
 import { MapService } from '../../servicios/map.service';
+import 'mapbox-gl/dist/mapbox-gl.css';
 
 @Component({
   selector: 'app-inmueble',
@@ -66,13 +66,11 @@ export class InmuebleComponent implements OnInit {
 
     })
     
-    this.ngMapExcec();
-
-  }
-
-  ngMapExcec(): void {
     this.map.buildMap();
+
   }
+ 
+    
 
 }
 

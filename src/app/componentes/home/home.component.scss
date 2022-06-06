@@ -4,6 +4,41 @@ $red: #F36F61;
 $light-green: #BED442;
 $green: #83CB53;
 $black: black;
+$white: white;
+
+.card-header{
+  background-color: $blue;
+  font-size: 25px;
+  color: $white;
+  letter-spacing: 2px;
+  
+  
+}
+
+.btn-top1{
+  background-color: $light-green !important;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.btn-top2{
+  background-color: $red !important;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.btn-top3{
+  background-color: $light-blue !important;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+
+.card-title{
+  font-size: 18px;
+  color: $black;
+
+}
 
 .navbar{
   background-color: $blue;
