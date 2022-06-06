@@ -1,27 +1,27 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { ApiService } from 'src/app/servicios/api.service';
 import { AuthServicioService } from 'src/app/servicios/auth-servicio.service';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-perfil',
-  templateUrl: './perfil.component.html',
-  styleUrls: ['./perfil.component.scss']
+  selector: 'app-perfilpass',
+  templateUrl: './perfilpass.component.html',
+  styleUrls: ['./perfilpass.component.scss']
 })
-export class PerfilComponent implements OnInit {
+export class PerfilpassComponent implements OnInit {
 
-  correo: string = "";
-  repite_correo: string = "";
+  pass: string = "";
+  repite_pass: string = "";
   id: number = 0;
   displayStyle = "none";
 
   constructor(private api: ApiService, private auth: AuthServicioService, private router: Router) { }
 
   get_user(){
-    if (this.repite_correo == this.correo){
+    if (this.repite_pass == this.pass){
       this.api.get_user(this.auth.get_token()).subscribe(user => {
         this.id = user.id;
-        this.api.updateUserEmail(this.correo, this.id).subscribe(res =>{
+        this.api.updateUserPass(this.pass, this.id).subscribe(res =>{
           if(res == 200){
             console.log("Usuario actualizado");
             this.router.navigate(['/userconfig']);
@@ -45,4 +45,3 @@ export class PerfilComponent implements OnInit {
   }
 
 }
-

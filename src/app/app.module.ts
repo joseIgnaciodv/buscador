@@ -28,6 +28,7 @@ import { UserConfigComponent } from './componentes/user-config/user-config.compo
 import { ReviewsComponent } from './componentes/reviews/reviews.component';
 import { PerfilComponent } from './componentes/perfil/perfil.component';
 import { TopBarComponent } from './componentes/top-bar/top-bar.component';
+import { PerfilpassComponent } from './componentes/perfilpass/perfilpass.component';
 
 
 
@@ -45,6 +46,7 @@ import { TopBarComponent } from './componentes/top-bar/top-bar.component';
     ReviewsComponent,
     PerfilComponent,
     TopBarComponent,
+    PerfilpassComponent,
 
   ],
   imports: [
