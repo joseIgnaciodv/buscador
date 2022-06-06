@@ -77,9 +77,6 @@ $light-green: #83CB53;
   margin: 0 auto;
 }
 
-.box{
-  margin-bottom: 36px;
-}
 
 .contenedor_linea{
   margin: 3% auto;
@@ -94,4 +91,20 @@ $light-green: #83CB53;
 #grafica_linea{
   width: 100%;
   height: 100%;
+}
+
+.contenedor_municipios{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: auto 0;
+  width: 100%;
+  & .num_municipios{
+      left: 0;
+      top: 0;
+      margin-left: 4%;
+      margin-top: 4%;
+  }
 }

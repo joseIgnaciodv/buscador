@@ -1,4 +1,5 @@
    <app-top-bar></app-top-bar>
+   <div class="pb-1">
    <section class="seccion-perfil-usuario mb">
         <div class="text-center m-5">
         <div class="card-header">
@@ -7,12 +8,12 @@
         <div class="row m-4">
           <div class="col-sm-6">
               <div class="card-body">
-                <button class="btn btn-outline-secondary pr-5 pl-5" onclick="window.location.href='/perfilpass'">Actualizar Password</button>
+                <button class="btn btn-outline-secondary" onclick="window.location.href='/perfilpass'">Actualizar Password</button>
               </div>
             </div>
           <div class="col-sm-6">
               <div class="card-body">
-                <button class="btn btn-outline-secondary pr-5 pl-5" onclick="window.location.href='/perfil'">Actualizar Email</button>
+                <button class="btn btn-outline-secondary" onclick="window.location.href='/perfil'">Actualizar Email</button>
               </div>
             </div>
           </div>
@@ -49,6 +50,7 @@
           <div class="col-sm-6">
             <div class="card m-2">
               <div class="card-body">
+                <div class="contenedor_municipios">
                 <mat-form-field class="num_municipios" appearance="outline">
                   <mat-label>Número municipios</mat-label>
                   <mat-select [(ngModel)]="num_elementos">
@@ -57,15 +59,15 @@
                     </mat-option>
                   </mat-select>
               </mat-form-field>
-              <div class="box">
               <div class="chart-container">
                 <canvas id="tarta">
                 </canvas>
               </div>
-            </div>
+                </div>
             </div>
             </div>
           </div>
         </div>
       </div>
     </section>
+  </div>
