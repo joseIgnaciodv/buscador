@@ -5,7 +5,7 @@
         <div class="mx-auto"></div>
         <ul class="navbar-nav">
           <li class="nav-item">
-            <button class="cerrar_sesion" mat-raised-button (click)="logout()">
+            <button class="btn-config" mat-raised-button (click)="logout()">
               <mat-icon>power_settings_new</mat-icon>
               Cerrar Sesión
             </button>
@@ -14,18 +14,18 @@
     </div>
 </nav>
 
-<div class="cabecera_dashboard">
+<div class="container">
   <div class="titulo_dashboard">
     <mat-icon>dashboard</mat-icon>
     <h1>Dashboard</h1>
   </div>
 
-  <div class="contenedor_botones">
-    <button class="boton_perfil" mat-raised-button color="primary" routerLink="/perfil">
+  <div class="card text-center border-0">
+    <button class="btn-config btn-dash" mat-raised-button color="primary" routerLink="/perfil">
       <mat-icon>email</mat-icon>
       Actualizar Email
     </button>
-    <button class="boton_pass" mat-raised-button color="primary" routerLink="/perfilpass">
+    <button class="btn-config btn-dash" mat-raised-button color="primary" routerLink="/perfilpass">
       <mat-icon>lock</mat-icon>
       Actualizar Contraseña
     </button>
