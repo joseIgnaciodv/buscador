@@ -70,6 +70,31 @@ $green:#83CB53;
     margin: 10px 10px;
   }
 
+  .cerrar_sesion{
+    background-color: $light-green !important;
+    color: $white !important;
+    font-weight: 500;
+    & mat-icon{
+      color: $white !important;
+    }
+  }
+
+  .cabecera_dashboard{
+    display: flex;
+    justify-content: space-between;
+  }
+
+
+  .titulo_dashboard{
+    display: flex;
+    margin: 2%;
+  }
+
+  .contenedor_botones{
+    display: flex;
+    width: 25%;
+    justify-content: space-between;
+  }
   
 .contenedor_maxOdio{
   width: 80%;
@@ -188,6 +213,11 @@ $green:#83CB53;
 #grafica_linea{
   width: 100%;
   height: 100%;
+}
+
+.espacio{
+  width: 100%;
+  height: 15px;
 }
 
 @media only screen and (min-width: 768px) {

@@ -22,6 +22,7 @@ export class UserConfigComponent implements OnInit {
   labels: string[] = [];
   localidades: string[] = []
   inmuebles: number[] = []
+
   public grafica_tarta!: Chart;
   public grafica_barra!: Chart;
 
@@ -53,7 +54,9 @@ export class UserConfigComponent implements OnInit {
       const data = {
         labels: this.localidades,
         datasets: [{
-          data: this.inmuebles
+          data: this.inmuebles,
+          backgroundColor: 'rgba(255, 99, 132, 0.2)',
+          borderColor: 'rgb(255, 99, 132)'
         }]
       };
   
@@ -134,6 +137,8 @@ export class UserConfigComponent implements OnInit {
   }
 
   renderizar_grafica_barra(){
+    this.localidades.splice(0)
+    this.inmuebles.splice(0)
     this.grafica_barra.destroy()
     this.crear_grafica_barra()
   }

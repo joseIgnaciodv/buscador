@@ -1,23 +1,36 @@
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <nav class="navbar">
-      <div class="container">
-          <img class="navbar-brand" src="assets/images/NBHD.png" routerLink="/" alt="">
-          <div class="mx-auto"></div>
-          <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="effect effect-1" href="/login">Atrás</a>
-            </li>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<nav class="navbar">
+    <div class="container">
+        <img class="navbar-brand" src="assets/images/NBHD.png" routerLink="/" alt="">
+        <div class="mx-auto"></div>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <button class="cerrar_sesion" mat-raised-button (click)="logout()">
+              <mat-icon>power_settings_new</mat-icon>
+              Cerrar Sesión
+            </button>
+          </li>
+        </ul>
+    </div>
+</nav>
 
-            <li class="nav-item">
-              <button mat-raised-button color="primary" (click)="logout()">
-                <mat-icon>power_settings_new</mat-icon>
-                Cerrar Sesión
-              </button>
-            </li>
-          </ul>
-      </div>
-  </nav>
+<div class="cabecera_dashboard">
+  <div class="titulo_dashboard">
+    <mat-icon>dashboard</mat-icon>
+    <h1>Dashboard</h1>
+  </div>
 
+  <div class="contenedor_botones">
+    <button mat-raised-button color="primary" routerLink="/perfil">
+      <mat-icon>email</mat-icon>
+      Actualizar Email
+    </button>
+    <button mat-raised-button color="primary" routerLink="/perfilpass">
+      <mat-icon>lock</mat-icon>
+      Actualizar Contraseña
+    </button>
+  </div>
+</div>
   
 <div class="contenedor_dashboard">
   <div class="primer_contenedor">
@@ -72,3 +85,5 @@
       </div>
   </div>
 </div>
+
+<div class="espacio"></div>
