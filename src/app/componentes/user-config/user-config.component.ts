@@ -20,6 +20,8 @@ export class UserConfigComponent implements OnInit {
   opciones = [3,5,7];
   datos: number[] = [];
   labels: string[] = [];
+  localidades: string[] = []
+  inmuebles: number[] = []
   public grafica_tarta!: Chart;
   public grafica_barra!: Chart;
 
@@ -41,18 +43,17 @@ export class UserConfigComponent implements OnInit {
   }
 
   crear_grafica_barra(): void{
-    let localidades: string[] = []
-    let inmuebles: number[] = []
     this.api.get_num_inmuebles(this.num_inmuebles).subscribe(respuesta =>{
+      console.log(respuesta)
       respuesta.forEach(element => {
-        localidades.push(element.localidad)
-        inmuebles.push(element.inmuebles)
+        this.localidades.push(element.localidad)
+        this.inmuebles.push(element.inmuebles)
       });
       Chart.register(...registerables);
       const data = {
-        labels: localidades,
+        labels: this.localidades,
         datasets: [{
-          data: inmuebles
+          data: this.inmuebles
         }]
       };
   
