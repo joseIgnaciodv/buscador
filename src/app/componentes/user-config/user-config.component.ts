@@ -55,8 +55,8 @@ export class UserConfigComponent implements OnInit {
         labels: this.localidades,
         datasets: [{
           data: this.inmuebles,
-          backgroundColor: 'rgba(255, 99, 132, 0.2)',
-          borderColor: 'rgb(255, 99, 132)'
+          backgroundColor: '#BED442',
+          borderColor: '#75d442'
         }]
       };
   

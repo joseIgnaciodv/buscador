@@ -94,6 +94,15 @@ $green:#83CB53;
     display: flex;
     width: 25%;
     justify-content: space-between;
+    & .boton_perfil{
+      width: fit-content;
+      height: 15%;
+    }
+
+    & .boton_pass{
+      width: fit-content;
+      height: 15%;
+    }
   }
   
 .contenedor_maxOdio{
