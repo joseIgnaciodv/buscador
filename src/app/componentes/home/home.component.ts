@@ -43,6 +43,9 @@ export class HomeComponent implements OnInit {
     }else if(this.inmueble == "Garajes"){
       let url = "/localidad/" + this.localidad + "/" + 4;
       this.router.navigateByUrl(url);
+    }else{
+      let url = "/localidad/" + this.localidad + "/" + 3;
+      this.router.navigateByUrl(url);
     }
   }
 

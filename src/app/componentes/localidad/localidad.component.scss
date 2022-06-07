@@ -66,6 +66,23 @@ $green: #83CB53;
   font-weight: 200;
   color: white;
 }
+
+.bread-container{
+  background-color: $blue;
+}
+.breadcrumb{
+  border-radius: 0px 10px 10px 0px !important;
+}
+.breadcrumb-p{
+  color: white;
+}
+.fa-angle-double-right {
+  color: white !important;
+}
+.breadcrumb>li+li:before {
+  content: "" !important;
+}
+
 .container-odio{
   text-align: center;
   margin-top: 30px;

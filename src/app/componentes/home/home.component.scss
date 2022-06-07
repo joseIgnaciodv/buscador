@@ -15,25 +15,6 @@ $white: white;
   
 }
 
-.btn-top1{
-  background-color: $light-green !important;
-  font-size: 15px;
-  font-weight: 600;
-}
-
-.btn-top2{
-  background-color: $red !important;
-  font-size: 15px;
-  font-weight: 600;
-}
-
-.btn-top3{
-  background-color: $light-blue !important;
-  font-size: 15px;
-  font-weight: 600;
-}
-
-
 .card-title{
   font-size: 18px;
   color: $black;
@@ -204,6 +185,16 @@ $white: white;
         }
     }
   }
+
+.btn-home{
+  color: white;
+  background-color: $light-green;
+}
+
+.btn-home:hover{
+  background-color: $green;
+}
+
 .modal-header{
   background-color: $green;
 }

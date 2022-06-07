@@ -57,6 +57,25 @@ $green: #83CB53;
     height: 80px;
     margin: 10px 10px;
   }
+  
+.bread-container{
+  background-color: $light-green;
+}
+.row-breadcrumb{
+  background-color: $blue;
+}
+.breadcrumb{
+  border-radius: 0px 10px 10px 0px !important;
+}
+.breadcrumb-p{
+  color: white;
+}
+.fa-angle-double-right {
+  color: white !important;
+}
+.breadcrumb>li+li:before {
+  content: "" !important;
+}
 
 .box {
 	display: flex;

@@ -2,7 +2,8 @@ $blue: #34548B;
 $white: white;
 $grey: #6E6E6E;
 $red: crimson;
-$light-green: #83CB53;
+$light-green: #BED442;
+$green:#83CB53;
 
 .card-header{
   background-color: $blue;
@@ -42,8 +43,19 @@ $light-green: #83CB53;
     width: 150px;
     border-radius: 6px;
     overflow: hidden;
-  }
+}
+
+.btn-config{
+  color: white;
+  background-color: $light-green;
+}
+
+.btn-config:hover{
+  background-color: $green;
+}
+
   .effect.effect-1 {
+    color: white;
     transition: all 0.2s linear 0s;
     
     &:before {
@@ -63,6 +75,7 @@ $light-green: #83CB53;
     }
     
     &:hover {
+      color: white;
       text-indent: -20px;
       
       &:before {
