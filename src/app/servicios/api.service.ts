@@ -88,4 +88,9 @@ export class ApiService {
     return this.http.get<ResultadoInmueble[]>(url);
   }
 
+  get_nombre_localidad(id_localidad: number): Observable<string>{
+    let url = environment.apiUrl + "api/get_nombre_localidad/" + id_localidad;
+    return this.http.get<string>(url);
+  }
+
 }

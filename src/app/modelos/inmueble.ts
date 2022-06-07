@@ -3,6 +3,7 @@ export interface Inmueble {
     'created_at': Date,
     'updated_at': Date,
     'localizaciones_id':number,
+    'tipo': number,
     'latitud':number,
     'longitud':number,
     'nombre': string,

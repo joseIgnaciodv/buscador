@@ -27,6 +27,8 @@ export class InmuebleComponent implements OnInit {
   telefono: string = "";
   ubicacion: string = "";
   caracteristicas: string[] = [];
+  localidad: string = "";
+  tipo: number = 0;
 
 
   //Para representar el inmueble en el mapa
@@ -44,6 +46,7 @@ export class InmuebleComponent implements OnInit {
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id']
     this.api.get_inmueble_concreto(this.id).subscribe(respuesta =>{
+      this.tipo = respuesta.tipo;
       this.localizaciones_id = respuesta.localizaciones_id;
       this.latitud = respuesta.latitud;
       this.longitud = respuesta.longitud;
@@ -63,6 +66,9 @@ export class InmuebleComponent implements OnInit {
       InmuebleComponent.nomb = this.nombre;
       InmuebleComponent.tele = this.telefono;
       InmuebleComponent.ubica = this.ubicacion;
+      this.api.get_nombre_localidad(this.localizaciones_id).subscribe(nombre =>{
+        this.localidad = nombre;
+      })
 
     })
     

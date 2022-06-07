@@ -5,7 +5,18 @@
 <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.css' rel=’stylesheet"/>
 <link href="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css" rel="stylesheet">
 
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<nav class="navbar">
+    <div class="container">
+        <img class="navbar-brand" src="assets/images/NBHD.png" routerLink="/" alt="">
+        <div class="mx-auto"></div>
+        <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="effect effect-1" [routerLink]="['/localidad', localidad, tipo]">Atrás</a>
+        </li>
+        </ul>
+    </div>
+</nav>
 
 <div class="cuerpo">
   
