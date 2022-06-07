@@ -48,7 +48,18 @@ export class HomeComponent implements OnInit {
       this.router.navigateByUrl(url);
     }
   }
-
+  navegar_alcobendas(){
+    let url = "/localidad/" + "Alcobendas" + "/" + 3;
+    this.router.navigateByUrl(url);
+  }
+  navegar_mostoles(){
+    let url = "/localidad/" + "Mostoles" + "/" + 3;
+    this.router.navigateByUrl(url);
+  }
+  navegar_pozuelo(){
+    let url = "/localidad/" + "Pozuelo de Alarcon" + "/" + 3;
+    this.router.navigateByUrl(url);
+  }
 
   ngOnInit(): void {
     this.filCountries = this.control.valueChanges.pipe(
